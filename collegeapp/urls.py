@@ -22,5 +22,5 @@ from event import views as event_views
 urlpatterns = [
     path('admin/', admin.site.urls),
    # path('', event_views.EventList, name="event-urls"),
-   path('event/', include('event.urls')),
+    path('event/', include('event.urls')),
 ]
