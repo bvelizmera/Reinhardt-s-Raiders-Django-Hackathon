@@ -45,10 +45,13 @@ class Event(models.Model):
     course = models.CharField(max_length=200)
     max_capacity = models.IntegerField()
     interest = models.CharField(max_length=200)
-    attending = models.ForeignKey(Student, 
-        on_delete=models.CASCADE, related_name="attending")
+    attending = models.ManyToManyField(Student, 
+        related_name="attending", blank=True)
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.name} on {self.date} at {self.location} | created by {self.creator}"
+
+    def number_attending(self):
+        return self.attending.count()
