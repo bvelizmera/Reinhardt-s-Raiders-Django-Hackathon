@@ -9,10 +9,23 @@ def EventList(request):
     Display all events
     """
     queryset = Event.objects.all()
-    event = get_object_or_404(queryset, creator=request.user)
+    # event = get_object_or_404(queryset, creator=request.user)
 
     return render(request, 
         'event/event.html', 
+        {"event_queryset": queryset,
+        }
+    )
+
+def show_user_events(request):
+    """
+    Display all events created by the logged-in user
+    """
+    queryset = Event.objects.all()
+    event = get_object_or_404(queryset, creator=request.user)
+
+    return render(request, 
+        'event/user_events.html', 
         {"event": event,
         }
     )
