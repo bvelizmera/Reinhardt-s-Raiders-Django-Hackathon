@@ -9,9 +9,7 @@ def EventList(request):
     Display all events
     """
     queryset = Event.objects.all()
-    # event = get_object_or_404(queryset, creator=request.user)
-    event = queryset.first()
-    # toRender = HttpResponse(queryset)
+    event = get_object_or_404(queryset, creator=request.user)
 
     return render(request, 
         'event/event.html', 

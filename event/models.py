@@ -11,7 +11,7 @@ class Student(models.Model):
     """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # username = models.CharField(max_length=100, unique=True)
+    username = models.CharField(max_length=100, unique=True)
     firstname = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
     bio = models.TextField()
@@ -20,12 +20,12 @@ class Student(models.Model):
     # photo = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
-        return f"{self.user.username}"
+        return f"{self.username}"
  
-@receiver(post_save, sender=User)
-def create_student(sender, instance, created, **kwargs):
-    if created:
-        Student.objects.create(user=instance)
+# @receiver(post_save, sender=User)
+# def create_student(sender, instance, created, **kwargs):
+#     if created:
+#         Student.objects.create(user=instance, username=instance.username)
 
 # @receiver(post_save, sender=User)
 # def save_student(sender, instance, **kwargs):
@@ -37,7 +37,7 @@ class Event(models.Model):
     Stores a single event related to :model:Student
     """
     name = models.CharField(max_length=200, unique=True)
-    creator = models.ForeignKey(Student, 
+    creator = models.ForeignKey(User, 
         on_delete=models.CASCADE, related_name="event_created")
     date = models.DateField()
     time = models.TimeField()
