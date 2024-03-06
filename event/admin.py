@@ -15,6 +15,14 @@ class EventAdmin(SummernoteModelAdmin):
     prepopulated_fields = {}
     summernote_fields = ('excerpt',)
 
-
-# Register your models here.
-admin.site.register(Student)
+@admin.register(Student)
+class StudentAdmin(SummernoteModelAdmin):
+    """
+    Lists fields for display in admin, fileds for search,
+    field filters, fields to prepopulate and rich-text editor.
+    """
+    list_display = ('user', 'firstname', 'lastname', 'created_on')
+    search_fields = ['user', 'lastname', 'created_on']
+    list_filter = ('created_on',)
+    prepopulated_fields = {}
+    summernote_fields = ('bio',)
