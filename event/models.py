@@ -47,6 +47,7 @@ class Event(models.Model):
     interest = models.CharField(max_length=200)
     attending = models.ForeignKey(Student, 
         on_delete=models.CASCADE, related_name="attending")
+    excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
