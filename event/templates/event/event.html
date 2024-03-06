@@ -1,0 +1,11 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+
+<p>Hello from inside event!</p>
+
+<h1>{{ event.name }}</h1>
+<h2>{{ event.location }}</h2>
+<h3>{{ event.date }} | {{ event.time }}</h3>
+<p>{{ event.creator }}</p>
+{% endblock content %}
