@@ -1,3 +1,16 @@
-*{
-    background-color: pink;
+
+@font-face {
+    font-family: IntroRust;
+    src: url(../fonts/introrustg-base2line.otf);
 }
+
+ head {
+    font-family: IntroRust;
+ }
+
+
+*{
+    background-color: orange;
+}
+
+
