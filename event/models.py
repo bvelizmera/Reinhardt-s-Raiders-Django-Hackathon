@@ -18,7 +18,7 @@ class Student(models.Model):
     bio = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    photo = CloudinaryField('image', default='placeholder')
+    photo = CloudinaryField('image', default='placeholder', blank=True)
 
     def __str__(self):
         return f"{self.username}"
@@ -50,7 +50,7 @@ class Event(models.Model):
         related_name="attending", blank=True)
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    photo = CloudinaryField('image', default='placeholder')
+    photo = CloudinaryField('image', default='placeholder', blank=True)
 
     def __str__(self):
         return f"{self.name} on {self.date} at {self.location} | created by {self.creator}"
@@ -74,3 +74,6 @@ class Review (models.Model):
     
     def __str__(self):
         return f"Review {self.body} by {self.author} on {self.updated_on}"
+        
+class Photo(models.Model):
+  image = CloudinaryField('image')
