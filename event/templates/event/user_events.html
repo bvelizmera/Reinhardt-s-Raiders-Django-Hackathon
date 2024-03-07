@@ -2,7 +2,9 @@
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% url 'non_student' as non_student_url %}
 
+{% if user.is_authenticated and is_student %}
 <!-- Show events created by currently logged-in user -->
 <h1>{{ request.user }}'s Events</h1>
 <p>You have created {{ events_queryset|length }} events</p>
@@ -26,5 +28,20 @@
         </form>
     </div>
 </div>
+{% elif not user.is_authenticated %}
+<p class="create_profile_warning">You need to register and create a student profile to access your events</p>
+<form action="{% url 'redirect_to_signup' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" name="new_user" class="btn btn-info">Register</button>
+</form>
+<!-- Registered users must also have a student profile -->
+{% elif not is_student %}
+<p>You are logged in as {{user.username}}.</p>
+<p class="create_profile_warning">You need to create a student profile to access your events</p>
+<form action="{% url 'non_student' %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" name="new_student" value="{{ user.username }}" class="btn btn-info">Create Profile</button>
+</form>
+{% endif %}
 
 {% endblock content %}
