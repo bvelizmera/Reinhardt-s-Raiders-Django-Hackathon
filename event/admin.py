@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Student, Event
+from .models import Student, Event, Review
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Event)
@@ -26,3 +26,15 @@ class StudentAdmin(SummernoteModelAdmin):
     list_filter = ('created_on',)
     prepopulated_fields = {}
     summernote_fields = ('bio',)
+
+@admin.register(Review)
+class ReviewAdmin(SummernoteModelAdmin):
+    """
+    Lists fields for display in admin, fileds for search,
+    field filters, fields to prepopulate and rich-text editor.
+    """
+    list_display = ('event', 'author', 'rating', 'updated_on')
+    search_fields = ['event', 'author', 'rating']
+    list_filter = ('event', 'author', 'rating')
+    prepopulated_fields = {}
+    summernote_fields = ('body',)

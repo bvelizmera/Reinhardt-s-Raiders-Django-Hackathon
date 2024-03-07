@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
-from .models import Student, Event
-from .forms import EventForm, StudentForm
+from .models import Student, Event, Review
+from .forms import EventForm, StudentForm, ReviewForm
+
 
 # additional function
 def is_viewer_student(request):
@@ -118,10 +119,22 @@ def event_detail(request, pk):
     queryset = Event.objects.all()
 
     event = get_object_or_404(queryset, pk=pk)
+    if request.method == "POST":
+        review_form = ReviewForm(data=request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.event = event
+            review.author = request.user
+            review.save()
+           
 
+    review_form = ReviewForm()
     return render(request,
         'event/event_detail.html',
         {'event': event,
+         'review_form':review_form,
         }
     )
 
+
+ 

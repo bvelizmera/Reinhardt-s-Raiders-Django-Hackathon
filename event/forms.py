@@ -1,6 +1,6 @@
 from django import forms
 from cloudinary.forms import CloudinaryFileField
-from .models import Event, Student
+from .models import Event, Student, Review
 
 
 class EventForm(forms.ModelForm):
@@ -19,3 +19,13 @@ class StudentForm(forms.ModelForm):
     class Meta:
         model = Student
         fields = ('firstname', 'lastname', 'bio', 'photo')
+
+class ReviewForm(forms.ModelForm):
+    """
+    Form class for users to create their review
+    """
+    class Meta:
+        model = Review
+        fields = ('body', 'rating', 'has_attended')
+
+
