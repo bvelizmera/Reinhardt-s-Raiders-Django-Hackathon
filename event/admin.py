@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Student, Event
+from .models import Student, Event, Photo
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Event)
@@ -26,3 +26,5 @@ class StudentAdmin(SummernoteModelAdmin):
     list_filter = ('created_on',)
     prepopulated_fields = {}
     summernote_fields = ('bio',)
+
+admin.site.register(Photo)

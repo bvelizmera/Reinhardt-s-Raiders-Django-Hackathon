@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
+from cloudinary.forms import cl_init_js_callbacks
 from .models import Student, Event
-from .forms import EventForm, StudentForm
+from .forms import EventForm, StudentForm, PhotoForm
 
 # additional function
 def is_viewer_student(request):
@@ -65,9 +66,9 @@ def show_user_events(request):
     """
     queryset = Event.objects.all().filter(creator=request.user)
     is_student = is_viewer_student(request)
+    context = dict( backend_form = EventForm())
     # Handle form data
     if request.method == "POST":
-        event_form = EventForm(data=request.POST)
         if event_form.is_valid():
             event = event_form.save(commit=False)
             event.creator = request.user
@@ -125,3 +126,13 @@ def event_detail(request, pk):
         }
     )
 
+def upload(request):
+  context = dict( backend_form = PhotoForm())
+
+  if request.method == 'POST':
+    form = PhotoForm(request.POST, request.FILES)
+    context['posted'] = form.instance
+    if form.is_valid():
+        form.save()
+
+  return render(request, 'event/upload.html', context)
