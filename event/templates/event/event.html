@@ -2,8 +2,11 @@
 {% block content %}
 {% load static %}
 {% url 'event_attending' as event_attending_url %}
+{% url 'non_student' as non_student_url %}
+{% url 'redirect_to_signup' as redirect_signup_url %}
 
 <h1 class="text-center">All Events</h1>
+
 <!-- Trying to establish a means of accessing whether student is attending each -->
 <!-- <p>Student {{ student.firstname }} {{ student.lastname }} currently attending: {{ student.attending|length }}</p> -->
 <div class="">
@@ -20,13 +23,27 @@
                 <h4><i class="fa-solid fa-calendar"></i> {{ event.date }} | {{ event.time }}</h4>
                 <p><i class="fa-solid fa-user"></i> {{ event.creator }}</p>
 
-                {% if user.is_authenticated %}
+                {% if user.is_authenticated and is_student %}
                     <form action="{% url 'event_attending' event.id %}" method="POST">
                     {% csrf_token %}
                     <!-- TODO: need to implement something to reflect whether user is attending -->
                     <button type="submit" name="event_id" value="{{ event.id }}" class="button float-end">Attend</button>
                     <!-- May need to be in the form of a line of text under the button including *You* if attending -->
                     </form>
+    <!-- Make sure that visitors are registered to click 'attend' -->
+    {% elif not user.is_authenticated %}
+    <p class="create_profile_warning">You need to register and create a student profile to attend</p>
+    <form action="{% url 'redirect_to_signup' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" name="new_student" class="btn btn-info">Register</button>
+    </form>
+    <!-- Registered users must also have a student profile -->
+    {% elif not is_student %}
+    <p class="create_profile_warning">You need to create a student profile to attend</p>
+    <form action="{% url 'non_student' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" name="new_student" value="{{ user.username }}" class="btn btn-info">Create Profile</button>
+    </form>
                 {% endif %}
             </div>
         </section>
