@@ -78,6 +78,9 @@ def show_user_events(request):
             # )
     #Initialise empty form
     event_form = EventForm()
+    for event in queryset:
+        print(event.photo)
+        print(event.photo.url)
 
     return render(request, 
         'event/user_events.html', 

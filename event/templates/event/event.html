@@ -14,7 +14,13 @@
         <section class="event-section row m-1">
             <div class="col-12 col-lg-4">
                 <div class="aspect-ratio">
-                    <image src="https://placehold.co/600x600">
+                    {% if "placeholder" in event.photo.url %}
+                    <img class="event_image" src="{% static 'images/default.webp' %}"
+                        alt="placeholder image">
+                    {% else %}
+                    <img class="event_image" src=" {{ event.photo.url }}"
+                        alt="{{ event.name }}">
+                    {% endif %}
                 </div>
             </div>
             <div class="col-12 col-lg-8">
