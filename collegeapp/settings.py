@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'cloudinary',
     'event',
+    'review'
 ]
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'

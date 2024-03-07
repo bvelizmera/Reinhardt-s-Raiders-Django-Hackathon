@@ -1,4 +1,5 @@
 
+/* Fonts */
 @font-face {
     font-family: IntroRust;
     src: url(../fonts/introrustg-base2line.otf);
@@ -11,7 +12,7 @@
     --dark: #010100;
     --light: #F8FFF4;
 }
-
+/* Stlying for the title and name of the website */
 #appname {
     height: 100%;
     width: 100%;
@@ -129,3 +130,127 @@ body{
     transform: translateY(.125rem);
   }
 }
+  /* Navbar styling  credit to https://codepen.io/ettrics/pen/WRbGRN*/
+nav {
+    font-family: "Century Gothic", 'Lato', sans-serif;
+}
+
+
+.navbar-tabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    position: relative;
+        text-align: center;
+        padding: 0 2em;
+}
+
+
+.navbar-tabs-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background: #F8FFF4;
+    z-index: 10;
+    &--top {
+        position: fixed;
+        top: 0;
+    }
+}
+    
+.navbar-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #010100;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+        transition: all 0.5s ease;
+        font-size: 2rem;
+      &:hover {
+            color:#F8FFF4;
+      background: #D30CD5;
+            transition: all 0.5s ease;
+    }
+}
+
+/* Footer Styling */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+footer {
+    background-color: #003FA5;
+	margin: 0;
+	font-family: 'Work Sans', sasns-serif;
+	font-weight: 800;
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+}
+
+
+footer::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+#foot-nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0px;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  position: relative;
+}
+
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #D30CD5;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+   background-color: #D30CD5; 
+   ;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+/*Body styling */
+
+/* *{
+    background-color: #F8FFF4;
+} */

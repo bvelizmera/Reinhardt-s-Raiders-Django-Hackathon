@@ -90,9 +90,6 @@ def show_user_events(request):
         }
     )
 
-def display_base(request):
-    return render(request, 'base.html')
-
 def create_student(request):
     """
     Display the form to allow a user to create their student profile
@@ -114,3 +111,17 @@ def create_student(request):
         {'student_form': student_form,
         }
     )
+
+
+def event_detail(request, pk):
+
+    queryset = Event.objects.all()
+
+    event = get_object_or_404(queryset, pk=pk)
+
+    return render(request,
+        'event/event_detail.html',
+        {'event': event,
+        }
+    )
+
