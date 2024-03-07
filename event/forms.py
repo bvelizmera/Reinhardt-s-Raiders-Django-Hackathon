@@ -10,14 +10,7 @@ class EventForm(forms.ModelForm):
     class Meta:
         model = Event
         fields = ('name', 'date', 'time', 'location',
-            'course', 'interest', 'max_capacity', 'excerpt')
-        photo = CloudinaryFileField(
-            attrs = { 'style': "margin-top: 30px" }, 
-            options = { 
-            'tags': "directly_uploaded",
-            'crop': 'limit', 'width': 1000, 'height': 1000,
-            'eager': [{ 'crop': 'fill', 'width': 150, 'height': 100 }]
-            })
+            'course', 'interest', 'max_capacity', 'excerpt', 'photo')
 
 class StudentForm(forms.ModelForm):
     """
