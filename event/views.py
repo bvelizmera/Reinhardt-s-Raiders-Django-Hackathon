@@ -4,17 +4,25 @@ from django.views import generic
 from .models import Student, Event
 from .forms import EventForm, StudentForm
 
+# additional function
+def is_viewer_student(request):
+    print(f"Checking whether user {request.user} has a student profile")
+    is_student=True
+    try:
+        student = get_object_or_404(Student, user=request.user)
+    except:
+        is_student=False
+    else:
+        print(student)
+    return is_student
+
 # Create your views here.
 def eventsDisplay(request):
     """
     Display all events
     """
     queryset = Event.objects.all()
-    is_student=True
-    try:
-        student = get_object_or_404(Student, user=request.user)
-    except:
-        is_student=False
+    is_student = is_viewer_student(request)
 
     return render(request, 
         'event/event.html', 
@@ -39,7 +47,7 @@ def EventAttending(request, pk):
 
     return HttpResponseRedirect(reverse('home'))
 
-def create_student(request):
+def non_student(request):
     """
     Pass a non-student user to the student profile creation form
     """
@@ -56,6 +64,7 @@ def show_user_events(request):
     Display all events created by the logged-in user
     """
     queryset = Event.objects.all().filter(creator=request.user)
+    is_student = is_viewer_student(request)
     # Handle form data
     if request.method == "POST":
         event_form = EventForm(data=request.POST)
@@ -74,6 +83,7 @@ def show_user_events(request):
         'event/user_events.html', 
         {"events_queryset": queryset,
          "event_form": event_form,
+         "is_student": is_student,
         }
     )
 
@@ -92,6 +102,7 @@ def create_student(request):
             student.user = request.user
             student.username = request.user.username
             student.save()
+            return HttpResponseRedirect(reverse('user_events'))
     
     student_form = StudentForm()
 

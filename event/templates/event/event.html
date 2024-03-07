@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 {% url 'event_attending' as event_attending_url %}
-{% url 'create_student' as new_student_url %}
+{% url 'non_student' as non_student_url %}
 {% url 'redirect_to_signup' as redirect_signup_url %}
 
 <h1>All Events</h1>
@@ -32,7 +32,7 @@
     <!-- Registered users must also have a student profile -->
     {% elif not is_student %}
     <p class="create_profile_warning">You need to create a student profile to attend</p>
-    <form action="{% url 'create_student' %}" method="POST">
+    <form action="{% url 'non_student' %}" method="POST">
         {% csrf_token %}
         <button type="submit" name="new_student" value="{{ user.username }}" class="btn btn-info">Create Profile</button>
     </form>
