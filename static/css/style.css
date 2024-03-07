@@ -1,9 +1,10 @@
 
+/* Fonts */
 @font-face {
     font-family: IntroRust;
     src: url(../fonts/introrustg-base2line.otf);
 }
-
+/* Stlying for the title and name of the website */
 #appname {
     height: 100%;
     width: 100%;
@@ -19,6 +20,60 @@
     font-weight: 100;
   }
 
+  /* Navbar styling  credit to https://codepen.io/ettrics/pen/WRbGRN*/
+nav {
+    font-family: "Century Gothic", 'Lato', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar-tabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    position: relative;
+        text-align: center;
+        padding: 0 2em;
+}
+
+
+.navbar-tabs-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background: #F8FFF4;
+    z-index: 10;
+    &--top {
+        position: fixed;
+        top: 0;
+    }
+}
+    
+.navbar-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #010100;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+        transition: all 0.5s ease;
+        font-size: 0.8rem;
+      &:hover {
+            color:#F8FFF4;
+      background: #D30CD5;
+            transition: all 0.5s ease;
+    }
+}
+
+/* Body styling */
 
 *{
     background-color: #F8FFF4;
