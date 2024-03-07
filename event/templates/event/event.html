@@ -18,7 +18,7 @@
                     <img class="event_image" src="{% static 'images/default.webp' %}"
                         alt="placeholder image">
                     {% else %}
-                    <img class="event_image" src=" {{ event.photo.url }}"
+                    <img class="event_image" src="{{ event.photo.url }}"
                         alt="{{ event.name }}">
                     {% endif %}
                 </div>
