@@ -1,11 +1,24 @@
 {% extends 'base.html' %} 
 {% block content %}
 {% load static %}
+{% url 'event_attending' as event_attending_url %}
 
-<p>Hello from inside event!</p>
-
-<h1>{{ event.name }}</h1>
-<h2>{{ event.location }}</h2>
-<h3>{{ event.date }} | {{ event.time }}</h3>
-<p>{{ event.creator }}</p>
+<h1>All Events</h1>
+<!-- Trying to establish a means of accessing whether student is attending each -->
+<!-- <p>Student {{ student.firstname }} {{ student.lastname }} currently attending: {{ student.attending|length }}</p> -->
+{% for event in event_queryset %}
+    <h2>{{ event.name }}</h2>
+    <h3>{{ event.location }}</h3>
+    <h4>{{ event.date }} | {{ event.time }}</h4>
+    <p>{{ event.creator }}</p>
+    
+    {% if user.is_authenticated %}
+    <form action="{% url 'event_attending' event.id %}" method="POST">
+        {% csrf_token %}
+        <!-- TODO: need to implement something to reflect whether user is attending -->
+        <button type="submit" name="event_id" value="{{ event.id }}" class="btn btn-info">Attend</button>
+        <!-- May need to be in the form of a line of text under the button including *You* if attending -->
+    </form>
+    {% endif %}
+{% endfor %}
 {% endblock content %}
