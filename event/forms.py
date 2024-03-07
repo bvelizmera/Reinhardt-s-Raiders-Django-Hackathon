@@ -1,4 +1,5 @@
 from django import forms
+from cloudinary.forms import CloudinaryFileField
 from .models import Event, Student
 
 
@@ -9,7 +10,7 @@ class EventForm(forms.ModelForm):
     class Meta:
         model = Event
         fields = ('name', 'date', 'time', 'location',
-            'course', 'interest', 'max_capacity', 'excerpt',)
+            'course', 'interest', 'max_capacity', 'excerpt', 'photo')
 
 class StudentForm(forms.ModelForm):
     """
@@ -17,4 +18,4 @@ class StudentForm(forms.ModelForm):
     """
     class Meta:
         model = Student
-        fields = ('firstname', 'lastname', 'bio',)
+        fields = ('firstname', 'lastname', 'bio', 'photo')
