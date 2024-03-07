@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django_summernote',
     'event',
+    'review'
 ]
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
