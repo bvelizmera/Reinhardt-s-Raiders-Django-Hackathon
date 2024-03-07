@@ -69,9 +69,11 @@ def show_user_events(request):
     context = dict( backend_form = EventForm())
     # Handle form data
     if request.method == "POST":
+        event_form = EventForm(data=request.POST)
         if event_form.is_valid():
             event = event_form.save(commit=False)
             event.creator = request.user
+            print(event.photo)
             event.save()
             # messages.add_message(
             #     request, messages.SUCCESS,
