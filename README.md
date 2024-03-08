@@ -68,15 +68,15 @@ The Home page focuses mainly on the display of the events, as we mentioned befor
 <img src="imge urls goes here" alt="Home page Events section">
 
 
-## Home page (Navbar and footer) 
+## Home page (Navbar and foooter) 
 
-Apart from the events section, the Home page also povides the user with a useful navbar and a informative footer. The navbar is divided into three main areas of interest; Home, Register and Login and the footer proportionates information of interest about the developers that collaborated on this project. The main features that can be highlighted are:
+Apart from the events, section the Home page also provides the user with a useful navbar and a informative footer. The navbar is divided into three main areas of interest; Home, Register and Login and the footer proportionate information of interest about the developers that collaborated on this project. The main features that can be highlithed are:
 
 - The clickable sections in both, the navbar and the footer 
 
-- The colour animation when the user hoovers over the clickable parts.
+- The colour animation when the user hovers over the clickable parts.
 
-- The change in the cursor icon when the user hoovers over the clickable parts.
+- The change in the cursor icon when the user hovers over the clickable parts.
 
 - User experience in the navbar and footer section: 
 
@@ -93,33 +93,60 @@ Apart from the events section, the Home page also povides the user with a useful
 <img src="imge urls goes here" alt="Home page Events section">
 
 
+
+
+
+
+
+## Authentication
+
+### Registration
+
+We have a registration page built using the default django user registration form, we have a custom view to display messages back to the user to feedback when the form is incorrect but as the default view isn't very customizable it displays mid-form. A fully bespoke solution would be needed next project
+
+<div align="center">
+  <img src="./ReadmeFiles/ReadmeImages/registration.png">
+</div>
+
+### login
+
+
+
+
+
 ## Design Choices
 
-We selected a rich and colourful style, using bright high contrast colours. We want the user to feel immersed in the experience of visiting our website. We derived our colours from https://visme.co/blog/website-color-schemes/
-“Bright Accent Colors”
-#242582
-#553D67
-#F64C72
-#99738E
-#2F2FA2
+### Fonts 
 
-We selected the font style Poppins 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'. It works well as a fun, slightly futuristic, slightly unusual font; but not unusual enough to overpower the rest of the page.
+IntroRust was chosen as a more interesting font that would give character to the page. It was sourced from [here](https://www.fontspring.com/fonts/fontfabric/intro-rust-free?utm_source=fontsquirrel.com&utm_medium=download_link&utm_campaign=intro-rust#firstfreeproduct)
 
-## Wire Frames
+We selected the font style Poppins 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'. It's is sans serif, so very clear and easy to read. it's popularity on the web gives it instant recognition as well'
 
 
-<strong>Landing page for First Time User followed by Options Pages for repeat users<br></strong>
+We selected more plain and simple design with professional colours but a big, vibrant pop of pink as an accent. We derived our colours from [coolors](https://coolors.co/012765-d30cd5-003fa5-010100-f8fff4)
 
+<div align="center">
+  <img src="./ReadmeFiles/ReadmeImages/coolors.png">
+</div>
 
+### Wire Frames
 
+<strong>The wireframes were constructed using Balsamiq in a group call to get feedback on all design choices. This was so front-end and back-end could be aligned even from the early stages to think of any pitfalls that could occur<br></strong>
 
-<img src="assets/images/readMeImages/wireframes/wflandingpagefinal2.png" alt="Wireframe image of Insert name and Options page">
+You can view the wireframes [here](./ReadmeFiles/Wireframes/CampusCampfire.pdf)
 
-## Quiz page
+<div align="center">
+  <img src="./ReadmeFiles/ReadmeImages/wireframe.png">
+</div>
 
-We ensured that we provided wireframes to cover all the different stages of user experience and features
+### Database
 
-<img src="assets/images/readMeImages/wireframes/wfquizfinal2.png" alt="Wireframe image of In-Quiz page">
+We tried to plan out our models before had to avoid having to do migrations mid-project. we tried to work out the field types, one-to-many, PK or FK etc. 
+
+Here is an image of our ERD:
+<div align="center">
+  <img src="./ReadmeFiles/ReadmeImages/ERD.png">
+</div>
 
 ## User Stories, features and bugs
 
@@ -395,7 +422,3 @@ Wireframes produced using Balsamiq WireFrames https://balsamiq.com/wireframes/?g
 
 Timer used to display delay issue https://www.online-stopwatch.com/
 
-
-## Other General Project Advice
-
-Enjoy the Quiz!
