@@ -2,7 +2,7 @@
 
 <h2>Introduction</h2>
 
-Campus Campfire is site site for college students who whan to connect, create events and leave their review on these events. As well students can select if they want to attend to an event and rate it onece it takes place.
+Campus Campfire is a site for college students who whan to connect, create events and leave their review on these events. As well students can select if they want to attend to an event and rate it onece it takes place.
 
 ## Landing page for first time users
 
@@ -109,38 +109,37 @@ We ensured that we provided wireframes to cover all the different stages of user
     <th>Bugs / Issues - tested across viewports of all devices using Google Dev Tools</th>
   </tr>
    <tr>
-    <td>As a user, I want a flowing, integrated user experience. </td>
-    <td>No bugs or issues that make interaction with site feel awkward</td>
-    <td>1. Three second delay between selecting answer and next question <br>
-    2. On large devices the "Enter name" box obscures the brand logo and feels like a pop-up rather than an integrated element of the UX package</td>
+    <td>As a user I want to know the name of the website so that I can share it with people. </td>
+    <td>Title of the app displayed on the header with an attractive font style.</td>
+    <td>The title sometimes does not collapse properly.</td>
    
     
   </tr>
   <tr>
-    <td>As a user, I want the questions and answers to be clear and unambiguous.</td>
-    <td>Questions clearly phrased. Text clearly delineated against background.</td>
-    <td>Occasional spelling errors e.g. "Introduced" spelt 'introudced'.</td>
+    <td>As a user I want to be able to create an account so I can have my own user profile.</td>
+    <td>Create own account.<br>Log into profile.</td>
+    <td>Error message displayed in the middle.</td>
   
   </tr>
    <tr>
-    <td>As a site owner, I want the logo clearly visible to increase brand recognition.</td>
-    <td>Logo clearly visible on landing/options page.</td>
-    <td>On first visit then "Enter Name" box covers brand logo on some devices</td>
+    <td>As a student I can join events so that I can foster growth in my interests or studies</td>
+    <td>Events page with all events displayed.<br>Organisers know who is attending.</td>
+    <td>On event detail page attending button can't see student status.</td>
   <tr>
-    <td>As a user, I want it to be obvious how to proceed with the game.</td>
-    <td>Questions, and answer list clear, with feedback when answers clicked.</td>
-    <td>None detected</td>
+    <td>As a user I can update my profile so that other users can learn more about me and i see more related content</td>
+    <td>Display name.<br>Display bio.</td>
+    <td>Does not have a list of future events to be attended.<br>Because of the way that the user is prompted to create a student profile, the view function that is triggered will always take them on to the user events page rather than wherever they had come from. </td>
   </tr>
   <tr>
-    <td>As a user, I want to be able to restart the game once I’ve finished.</td>
-    <td>Play again button at bottom of page when quiz complete</td>
-    <td>None deteced</td>
+    <td>As a site owner I can collect feedback on events so that I can see which events are successful and popular and which arent.</td>
+    <td>Rate events.<br>Comments system by attendees.</td>
+    <td>None deteced.</td>
     
   </tr>
   <tr>
-    <td>As a user, I want to be able to reset the game when I’ve made an error.</td>
-    <td>Reset / restart quiz button</td>
-    <td>None detected</td>
+    <td>As a Organiser I can create events so that students can attend them.</td>
+    <td>Specify date, time, location, course or interest, and max. participants.<br>List of students attending.<br>Add an event picture.</td>
+    <td>List of students when event is expanded not.</td>
     
   </tr>
   <tr>
@@ -168,51 +167,6 @@ We ensured that we provided wireframes to cover all the different stages of user
     <td>None detected</td>
     
   </tr>
-  <tr>
-    <td>As a user, I want to be able to start the quiz.</td>
-    <td>Page loads and includes necessary event listeners</td>
-    <td>None detected</td>
-    
-  </tr>
-   <tr>
-    <td>As a site owner, I want to use an API so that I can source questions from an outside repository.</td>
-    <td>Questions load clearly in each different category and difficulty</td>
-    <td>Sometimes quiz repeats questions, or includes them from higher difficulties.</td>
-    
-  </tr>
-      <td>As a user, I want to sort the questions by categories so I can test myself on specific topics.</td>
-    <td>Drop-down menu specifying topic category</td>
-    <td>None detected</td>
-    <tr>
-      <td>As a user I want to challenge myself against different degrees of difficulty depending on my level of knowledge</td>
-    <td>Drop-down menu specifying difficulty level</td>
-    <td>Sometimes quiz repeats questions, or includes them from higher difficulties.</td>
-    </tr>
-    <tr>
-    <td>As a user, I want to be greeted by name when I enter the website for personalisation and to feel welcome.</td>
-    <td>Input Name field and have name saved when user returns (cookies required)</td>
-    <td>None detected</td>
-  </tr>
-     <tr>
-    <td>As a user I want to see my score</td>
-    <td>Current score display to keep score updating</td>
-    <td>None detected</td>
-  </tr>
-    <tr>
-    <td>As a user I want to be able to share the fun I am having doing the quiz, and challenge my friends.</td>
-    <td>"Share with friends" copy link button. Post to FB / Instagram / X clickable icons.</td>
-    <td>Ran out of time to add Instagram and X icons</td>
-  </tr>
-    <tr>
-     <td>As a site owner I want to increase the visibility and thus usership of our website.</td>
-    <td>"Share with friends" copy link button. Post to FB / Instagram / X clickable icons.</td>
-    <td>Ran out of time to add Instagram and X icons</td>
-  </tr>
-    <tr>
-     <td>As a user, I want to be able to adjust the number of questions I am asked to try shorter or longer games.</td>
-    <td>Dropdown menu providing game length options</td>
-    <td>Sometimes quiz repeats questions, or includes them from higher difficulties.</td>
-  </tr>
   </table>
 
 <br>
@@ -231,8 +185,14 @@ We ensured that we provided wireframes to cover all the different stages of user
 
 
   <tr>
-    <td>As a user I want to be able to store my highest score to see if I can beat it on my future visits.</td>
-    <td>Highest score from previous use visible (cookies required)</td>
+    <td>As a student I want to able to search filter events so that I can attend events of my interest.</td>
+    <td>Filter by category, words or interests.</td>
+    <td>N/A</td>
+  </tr>
+  
+  <tr>
+    <td>As a Student I can get notified of upcoming events so that I am less likely to miss or forget the event.</td>
+    <td>Get notifications from upcoming events.</td>
     <td>N/A</td>
   </tr>
   
@@ -248,16 +208,11 @@ We ensured that we provided wireframes to cover all the different stages of user
     <th>Bugs / Issues</th>
   </tr>
   <tr>
-    <td>As a user, I want to have a countdown timer to challenge myself to answer more quickly.</td>
-    <td>A countdown timer to display either how long I have left to answer the question before it assigns to wrong</td>
+    <td>As a user I want to be able to follow other students.</td>
+    <td>Follow option.</td>
     <td>N/A</td>
   </tr>
-    
- 
-  <td>As a site-owner I want to have a questions backup in case the API  stops working.</td>
-    <td>A secondary API or source of questions in case the first API breaks down</td>
-    <td>N/A</td>
-  </table>
+
 
 ## Fixed Bugs / Issues
 <br>
