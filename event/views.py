@@ -229,7 +229,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             # Successful login
-            return redirect('success_page')  # Replace with your success page
+            return redirect('success_page') 
         else:
             # Unsuccessful login
             messages.error(request, 'Invalid username or password. Please try again.')
@@ -243,7 +243,7 @@ def register_view(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Registration successful. You can now log in.')
-            return redirect('login')  # Replace with your login URL
+            return redirect('login')
         else:
             # Unsuccessful registration
             messages.error(request, 'Invalid registration. Please correct the errors below.')
