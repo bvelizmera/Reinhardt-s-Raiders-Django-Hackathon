@@ -36,7 +36,7 @@ The first element that the user sees when visiting site, is the logo: Campfire C
 
  <strong>Home page Logo section</strong>
 
-<img src="imge urls goes here" alt="Home page Events section">  
+<img src="./ReadmeFiles/ReadmeImages/logo.png" alt="Home page Logo section">  
 
 
 
@@ -90,10 +90,11 @@ Apart from the events, section the Home page also provides the user with a usefu
 
 <strong>Home page Events section</strong>
 
-<img src="imge urls goes here" alt="Home page Events section">
+<img src="./ReadmeFiles/ReadmeImages/navbar.png" alt="Home page Navbar section">
 
+<br>
 
-
+<img src="./ReadmeFiles/ReadmeImages/footer.png" alt="Home page Footer section">
 
 
 
