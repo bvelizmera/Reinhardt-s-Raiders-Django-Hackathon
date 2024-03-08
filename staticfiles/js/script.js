@@ -3,7 +3,6 @@
 const deleteModal = new bootstrap.Modal(document.getElementById("delete_Modal"));
 const deleteButtons = document.getElementsByClassName("delete-btn");
 const deleteConfirm = document.getElementById("deleteConfirm");
-console.log('Hello from JS!')
 for (let button of deleteButtons) {
     
     button.addEventListener("click", (e) => {

@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
-<body class="">
+<body>
         <header>
             <div class="container-fluid justify-content-center">
                 <div id="appname" class="row text-center">
@@ -38,24 +38,22 @@
             </div>
         </header>
         <!-- Navigation -->
-        <nav class="navbar-tabs">
-            <div class="navbar-tabs-container">
-                <a class="navbar-tab nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
+        <nav class="navbar navbar-tabs-container p-0">
+                <a class="navbar-tab {% if request.path == home_url %}active" aria-current="page{% endif %}"
                     href="{% url 'home' %}">Home</a>
                 {% if user.is_authenticated %}
-                    <a class="navbar-tab nav-link {% if request.path == events_url %}active" aria-current="page{% endif %}"
+                    <a class="navbar-tab {% if request.path == events_url %}active" aria-current="page{% endif %}"
                         href="{% url 'user_events' %}">My Events</a>
-                    <a class="navbar-tab nav-link {% if request.path == user_profile_url %}active" aria-current="page{% endif %}"
+                    <a class="navbar-tab {% if request.path == user_profile_url %}active" aria-current="page{% endif %}"
                         href="{% url 'user_profile' %}">Profile</a>
-                    <a class="navbar-tab nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
+                    <a class="navbar-tab {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                         href="{% url 'account_logout' %}">Logout</a>
                 {% else %}
-                    <a class="navbar-tab nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
+                    <a class="navbar-tab {% if request.path == signup_url %}active" aria-current="page{% endif %}"
                         href="{% url 'account_signup' %}">Register</a>
-                    <a class="navbar-tab nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
+                    <a class="navbar-tab {% if request.path == login_url %}active" aria-current="page{% endif %}"
                         href="{% url 'account_login' %}">Login</a>
                 {% endif %}
-            </div>
         </nav>
     <main class="flex-shrink-0 main-bg container">
         {% block content %}
@@ -70,10 +68,10 @@
             <div class="container">        
               <nav id="foot-nav">
                 <ul>
-                  <li><a href="https://github.com/bvelizmera">Bill</a></li>
-                  <li><a href="https://github.com/alphabetjim">James</a></li>
-                  <li><a href="https://github.com/caleom">Liam</a></li>
-                  <li><a href="https://github.com/martinamicaela">Martina</a></li>
+                  <li><a href="https://github.com/bvelizmera" target="_blank"><i class="fa-brands fa-github"></i> Bill</a></li>
+                  <li><a href="https://github.com/alphabetjim" target="_blank"><i class="fa-brands fa-github"></i> James</a></li>
+                  <li><a href="https://github.com/caleom" target="_blank"><i class="fa-brands fa-github"></i> Liam</a></li>
+                  <li><a href="https://github.com/martinamicaela" target="_blank"><i class="fa-brands fa-github"></i> Martina</a></li>
                 </ul>
               </nav>
             </div>
