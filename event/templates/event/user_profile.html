@@ -8,11 +8,11 @@
     <div class="row">
         <div class="col-12 col-lg-4">
             <div class="aspect-ratio-vert">
-                {% if "placeholder" in profile.photo.url %}
+                {% if profile.photo_url == "" %}
                     <img class="profile-image" src="{% static 'images/nobody.jpg' %}"
                         alt="placeholder image">
                 {% else %}
-                    <img class="profile-image" src="{{ profile.photo.url }}"
+                    <img class="profile-image" src="{{ profile.photo_url }}"
                         alt="{{ profile.name }}">
                 {% endif %}
             </div>
@@ -24,9 +24,9 @@
                     <p>{{ profile.bio }}</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row d-none">
                 <div class="col-12">
-                    <button class="button"><i class="fa-solid fa-pencil"></i> edit</button>
+                    <button id="userProfile_edit" class="button"><i class="fa-solid fa-pencil"></i> edit</button>
                 </div>
             </div>
         </div>
@@ -64,7 +64,6 @@
         </div>
     </div>
 </div>
-
 
 
 {% endblock content %}

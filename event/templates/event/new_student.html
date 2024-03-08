@@ -7,6 +7,9 @@
 <div class="justify-content-center">
     <div class="col-6 newEventDiv">
         <h2>Create Your Student Profile</h2>
+        <h4>First, upload a photo:</h4>
+        <button id="upload_widget" class="cloudinary-button">Upload files</button>
+        <h4>Then add your details</h4>
         <form id="studentForm" method="post"
                     style="margin-top: 1.3em;">
         {{ student_form | crispy }}
@@ -17,6 +20,27 @@
     </div>
 </div>
 
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 
+<script type="text/javascript">  
+function populateWithURL(image_url){
+    urlContainer = document.getElementById("id_photo_url")
+    console.log(urlContainer.firstChild)
+    urlContainer.value = image_url
+}
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'ddfqaz73q', 
+  uploadPreset: 'vaxtqmwz'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info);
+      populateWithURL(result.info.url) 
+    }
+  }
+)
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+</script>
 
 {% endblock content %}
