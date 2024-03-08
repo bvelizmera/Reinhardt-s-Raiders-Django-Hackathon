@@ -1,4 +1,4 @@
-<h1>CAMPUS CAMPFIRE README.MD</h1>
+<h1>CAMPFIRE CAMPUS README.MD</h1>
 
 <h2>Introduction</h2>
 
@@ -8,11 +8,18 @@ Campus Campfire is site site for college students who whan to connect, create ev
 
 The landing page allows users to see a display with all the upcommimg events ordered in chronologically way, being the closest one, the first appearing on the top of the page.
 
-Besides, right at the top the users can see the logo of the page in bright blue with a navbar under it that contains the main sections of the site: Home, Register and Login. 
+Besides, right at the top the users can see the logo of the page in bright blue with a navbar under it that contains the main sections of the site: Home, Register and Login. Alonside with the navbar, on the opposte side of the page the user can find the footer with the names of the developers who worked together on this project. 
 
 <strong>Landing page for first time users</strong>
 
-<img src="imge urls goes here" alt="Options page across different devices">
+<img src="imge urls goes here" alt="home page landing page first time">
+
+<strong>Home page across multiple devices</strong>
+
+
+<img src="image url goes here" alt="Options page across different devices">
+
+<br>
 
 
 
@@ -20,20 +27,34 @@ Besides, right at the top the users can see the logo of the page in bright blue 
 
 The Home page focuses mainly on the display of the events, as we mentioned before the events oppeared ordered in time. Each event is enclosed in a black squeare to differentiate it from the rest of events. The main features that can be highlithed are:
 
-- The name of the event in 
+- The name of the event is as well a clickable button for the user. 
 
-allows users to provide their name so that they are greeted by name on return visits. 
+- Under the event name, the user can see the location, the date, and the creator of the event each one with a descriptive icon.  
 
-There are drop menus to adjust difficulty, category, how many questions, and question type. There is also a social media button to easily share Quiz-E. 
+- On the top right corner, the user can see the number of available spots and the number of participants attending with icon next to it. 
 
-It displays the Quizzee Rascals brand logo clearly for brand recognition. It also provides the option to share Quiz-E with friends and family on social media.
+- Finally, on the bottom right corner there is a clickable button for those students who want to register.
 
-<strong>Options page across multiple devices</strong>
+- User experience in the events section: 
+
+  - The slection of size, colour and type of font, 
+ helps the user to identify quickly the name of the event and the button for registring.
+ 
+  - The icons give important visual information about the event (location, date, author, number of participants) and help the user to navigate through the information provided.
+  
+   - The clickable button is easy  to identify, as it stands alone on the right corner, besides it gives straight and intuitive access to the new user who wants to register for an upcoming event.
+
+<strong>Home page Events section</strong>
+
+<img src="imge urls goes here" alt="Home page Events section">
 
 
-<img src="assets/images/readMeImages/amiresponsive/welcomeback.png" alt="Options page across different devices">
+## Home page (Navbar and foooter) 
 
-<br>
+
+
+
+
 
 <strong>Quiz length dropdown menu</strong>
  
