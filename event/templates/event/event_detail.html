@@ -1,16 +1,25 @@
 {% extends 'base.html' %} 
 {% block content %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 <div class="row">
     <div class="col-12 col-md-6">
         <div class="aspect-ratio">
-            <image src="https://placehold.co/600x600">
+            {% if "placeholder" in event.photo.url %}
+                <img class="event_image" src="{% static 'images/default.webp' %}"
+                    alt="placeholder image">
+            {% else %}
+                <img class="event_image" src="{{ event.photo.url }}"
+                    alt="{{ event.name }}">
+            {% endif %}
         </div>
     </div>
     <div class="col-12 col-md-6"> 
         <div class="row">
             <div class="col-12">
+                <p class="counter float-end {% if event.attending.count == event.max_capacity  %}
+                    red-text{% else  %} green-text{% endif %}"><i class="fa-solid fa-person"></i> {{ event.attending.count }} / {{ event.max_capacity }} </p>
                 <h1>{{ event.name }}</h1>
             </div>
         </div>
@@ -19,7 +28,6 @@
                 <p>{{ event.excerpt }}</p>
             </div>
         </div>
-        
     </div>
 </div>
 
@@ -49,20 +57,48 @@
         </table>
     </div>
     <div class="col-6">
-        {{ event.attending }}<br>
+        
     </div>
 </div>
-<!-- Include event_form here -->
-<div class="justify-content-center">
-    <div class="col-6 newEventDiv">
-        <h2>Create Your Review</h2>
-        <form id="reviewForm" method="post"
-                    style="margin-top: 1.3em;">
-        {{ review_form | crispy }}
-        {% csrf_token %}
-        <button id="submitButton" type="submit"
-            class="btn btn-signup btn-lg">Submit</button>
-        </form>
+<div class="row">
+    <div class="col-12 col-md-6">
+        <h2>Comments</h2>
+        {% for review in reviews %}
+                <section class="comment-section m-1 p-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="float-start">{% if review.has_attended == True %} <i class="fa-solid fa-check" style="color: #0fca18;"></i> {% else %} <i class="fa-solid fa-xmark" style="color: #d82c2c;"></i> {% endif %} attended</p>
+                            <p class="float-end"><i class="fa-solid fa-user"></i> {{ review.author }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p>{{ review.body }}<p>
+                            <p class="float-start">
+                            {% for counter in "x"|rjust:review.rating %}
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            {% endfor %}
+                            </p>
+                            <p class="float-end">{% if review.author == user%}<button review_id="{{review.id}}"class="delete-btn"><i class="fa-solid fa-trash-can" style="color: #e0141a;"></button>{% endif %}</i></p>
+                        </div>
+                    </div>
+                </section>
+        {% endfor %}
+    </div>
+    <div class="col-12 col-md-6">
+        <div class="">
+            <h2 class="text-center">Create Your Review</h2>
+            <form id="reviewForm" method="post"
+                        style="margin-top: 1.3em;">
+            {% csrf_token %}
+            {{ review_form | crispy }}
+            <button id="submitButton" type="submit"
+                class="button">Submit</button>
+            </form>
+        </div>
     </div>
 </div>
+
+
+
 {% endblock content %}

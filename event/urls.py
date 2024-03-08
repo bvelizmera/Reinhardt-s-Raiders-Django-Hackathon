@@ -4,7 +4,6 @@
 
 from django.urls import path
 from . import views
-from .views import event_detail
 
 urlpatterns = [
     path('', views.eventsDisplay, name='home'),
@@ -14,5 +13,8 @@ urlpatterns = [
     path('event/<int:pk>', views.EventAttending, name='event_attending'),
     path('signup/', views.redirect_to_signup, name='redirect_to_signup'),
     path('event/<int:pk>/', views.event_detail, name='event_detail'),
-    path('upload/', views.upload, name='upload_image')
+    path('upload/', views.upload, name='upload_image'),
+    path('profile/', views.profile, name='user_profile'),
+    path('event/<int:pk>/delete_review/<int:review_id>',
+         views.review_delete, name='review_delete'),
 ]
