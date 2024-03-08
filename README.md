@@ -23,7 +23,7 @@ Besides, right at the top the users can see the logo of the page in bright blue 
 
 ## Home page (Site Logo)
 
-The fisrt element that the user sees when visiting site, is the logo: Campfire Campus in big, bright blue font. 
+The first element that the user sees when visiting site, is the logo: Campfire Campus in big, bright blue font. 
 
 - User experience in the Logo section: 
 
@@ -32,7 +32,7 @@ The fisrt element that the user sees when visiting site, is the logo: Campfire C
 
   - The name of the site "Campfire Campus" indicates clearly that this is a website related with the academic world. In addition, the name indicates that it is a place for socialising and students are welcomed. 
   
-  - Thanks to the Logo the user would feel comfortable and with a postive attitude even before checking the rest of the page. 
+  - Thanks to the Logo the user would feel comfortable and with a positive attitude even before checking the rest of the page. 
 
  <strong>Home page Logo section</strong>
 
@@ -42,7 +42,7 @@ The fisrt element that the user sees when visiting site, is the logo: Campfire C
 
 ## Home page (Events) 
 
-The Home page focuses mainly on the display of the events, as we mentioned before the events oppeared ordered in time. Each event is enclosed in a black squeare to differentiate it from the rest of events. The main features that can be highlithed are:
+The Home page focuses mainly on the display of the events, as we mentioned before the events appeared ordered in time. Each event is enclosed in a black square to differentiate it from the rest of events. The main features that can be highlighted are:
 
 - The name of the event is as well a clickable button for the user. 
 
@@ -55,9 +55,11 @@ The Home page focuses mainly on the display of the events, as we mentioned befor
 - User experience in the events section: 
 
   - The selection of size, colour and type of font, 
- helps the user to identify quickly the name of the event and the button for registring.
+ helps the user to identify quickly the name of the event and the button for registering.
  
   - The icons give important visual information about the event (location, date, author, number of participants) and help the user to navigate through the information provided.
+
+  -The colour animation on the attending icon gives 
   
    - The clickable button is easy  to identify, as it stands alone on the right corner, besides it gives straight and intuitive access to the new user who wants to register for an upcoming event.
 
@@ -66,11 +68,11 @@ The Home page focuses mainly on the display of the events, as we mentioned befor
 <img src="imge urls goes here" alt="Home page Events section">
 
 
-## Home page (Navbar and foooter) 
+## Home page (Navbar and footer) 
 
-Apart from the events, section the Home page also povides the user with a useful navbar and a informative footer. The navbar is divided into three main areas of interest; Home, Register and Login and the footer proportionates information of interest about the developers that collaborated on this project. The main features that can be highlithed are:
+Apart from the events section, the Home page also povides the user with a useful navbar and a informative footer. The navbar is divided into three main areas of interest; Home, Register and Login and the footer proportionates information of interest about the developers that collaborated on this project. The main features that can be highlighted are:
 
-- The clickable sections in both, the navabar and the footer 
+- The clickable sections in both, the navbar and the footer 
 
 - The colour animation when the user hoovers over the clickable parts.
 
@@ -81,57 +83,15 @@ Apart from the events, section the Home page also povides the user with a useful
   - The selection of size, colour and type of font, 
  helps the user to identify quickly the different sections that can be found on the navbar.
 
-  - The colour transition animation in the navbar and the footer, as well as the change in the cursor icon, both give clear indications about the clickable property of the elements in these sections. Besides, they produce an eye-catching effect on the user when these elements are hoovered over, creating the need for clicking and a sense of mistery.
+  - The colour transition animation in the navbar and the footer, as well as the change in the cursor icon, both give clear indications about the clickable property of the elements in these sections. Besides, they produce an eye-catching effect on the user when these elements are hoovered over, creating the need for clicking and a sense of mystery.
 
-  - The Git hub cat icon in the footer,  gives important visual information about the names, as it makes explict their contribution as developers in the project. 
+  - The Git hub cat icon in the footer,  gives important visual information about the names, as it makes explicit their contribution as developers in the project. 
   
 
 <strong>Home page Events section</strong>
 
 <img src="imge urls goes here" alt="Home page Events section">
 
-
-
-
-
-
-
-<strong>Quiz length dropdown menu</strong>
- 
-
-<img src="assets/images/readMeImages/options/questions.png" alt="Options page showing dropdown menu with different quiz lengths">
-
-<br>
-
-<strong>Quiz subject dropup menu</strong>
-
-<img src="assets/images/readMeImages/options/category.png" alt="Options page showing dropdown menu with different categories">
-
-<br>
-
-
-
- ## Quiz page
-
- The quiz page presents questions and possible answers, with buttons clearly delineated against their background. 
- 
- There is clear feedback when a user selects and then commits an answer. 
- 
- It lets you know the correct answer if you were wrong. There is also an updating score display. 
-
- There is a restart button in case the user decides they want to start again. 
-
-<strong>In-quiz page across multiple devices</strong>
-
-<img src="assets/images/readMeImages/amiresponsive/quiz-page.png" alt="Quiz page across different devices">
-
-<strong>Mid-quiz page showing answer committed and feedback provided</strong>
-
-<img src="assets/images/readMeImages/quizpage/quizpage2.png" alt="Quiz being played">
-
-<strong>Quiz complete screen</strong>
-
-<img src="assets/images/readMeImages/quizpage/quizcomplete.png" alt="Quiz complete page">
 
 ## Design Choices
 
