@@ -51,6 +51,7 @@ class Event(models.Model):
         related_name="attending", blank=True)
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
+    photo_url = models.CharField(max_length=500, blank=True)
     photo = CloudinaryField('image', default='placeholder', blank=True)
 
     def __str__(self):

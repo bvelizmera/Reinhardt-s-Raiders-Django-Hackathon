@@ -40,14 +40,18 @@ class EventForm(forms.ModelForm):
         label='Excerpt',
         widget=forms.Textarea(attrs={'type': 'text','rows': 4, 'cols': 40})
     )
-    # photo = forms.CharField(
+    photo_url = forms.CharField(
+        label='Photo URL',
+        widget=forms.TextInput(attrs={'type': 'text'})
+    )
+    # photo = forms.CloudinaryFileField(
     #     label='Photo',
     #     widget=forms.FileInput(attrs={'type': 'file'})
     # )
     class Meta:
         model = Event
         fields = ('name', 'date', 'time', 'location',
-            'course', 'interest', 'max_capacity', 'excerpt', 'photo')
+            'course', 'interest', 'max_capacity', 'excerpt', 'photo_url')
 
 class StudentForm(forms.ModelForm):
     """

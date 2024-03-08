@@ -13,11 +13,11 @@
 <section class="event-section row m-1">
   <div class="col-12 col-lg-4">
       <div class="aspect-ratio">
-          {% if "placeholder" in event.photo.url %}
+          {% if event.photo_url == "" %}
           <img class="event_image" src="{% static 'images/default.webp' %}"
               alt="placeholder image">
           {% else %}
-          <img class="event_image" src="{{ event.photo.url }}"
+          <img class="event_image" src="{{ event.photo_url }}"
               alt="{{ event.name }}">
           {% endif %}
       </div>
@@ -99,8 +99,9 @@
 
 <script type="text/javascript">  
 function populateWithURL(image_url){
-    urlContainer = document.getElementById("photo_url")
-    urlContainer.innerText = image_url
+    urlContainer = document.getElementById("id_photo_url")
+    console.log(urlContainer.firstChild)
+    urlContainer.value = image_url
 }
 var myWidget = cloudinary.createUploadWidget({
   cloudName: 'ddfqaz73q', 
