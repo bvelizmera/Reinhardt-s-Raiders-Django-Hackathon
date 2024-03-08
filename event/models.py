@@ -19,6 +19,7 @@ class Student(models.Model):
     bio = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+    photo_url = models.CharField(max_length=500, blank=True)
     photo = CloudinaryField('image', default='placeholder', blank=True)
 
     def __str__(self):

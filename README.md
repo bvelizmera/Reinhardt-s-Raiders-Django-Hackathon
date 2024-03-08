@@ -2,7 +2,7 @@
 
 <h2>Introduction</h2>
 
-Campus Campfire is site site for college students who whan to connect, create events and leave their review on these events. As well students can select if they want to attend to an event and rate it onece it takes place.
+Campus Campfire is a site for college students who whan to connect, create events and leave their review on these events. As well students can select if they want to attend to an event and rate it onece it takes place.
 
 ## Landing page for first time users
 
@@ -23,7 +23,7 @@ Besides, right at the top the users can see the logo of the page in bright blue 
 
 ## Home page (Site Logo)
 
-The fisrt element that the user sees when visiting site, is the logo: Campfire Campus in big, bright blue font. 
+The first element that the user sees when visiting site, is the logo: Campfire Campus in big, bright blue font. 
 
 - User experience in the Logo section: 
 
@@ -32,7 +32,7 @@ The fisrt element that the user sees when visiting site, is the logo: Campfire C
 
   - The name of the site "Campfire Campus" indicates clearly that this is a website related with the academic world. In addition, the name indicates that it is a place for socialising and students are welcomed. 
   
-  - Thanks to the Logo the user would feel comfortable and with a postive attitude even before checking the rest of the page. 
+  - Thanks to the Logo the user would feel comfortable and with a positive attitude even before checking the rest of the page. 
 
  <strong>Home page Logo section</strong>
 
@@ -42,7 +42,7 @@ The fisrt element that the user sees when visiting site, is the logo: Campfire C
 
 ## Home page (Events) 
 
-The Home page focuses mainly on the display of the events, as we mentioned before the events oppeared ordered in time. Each event is enclosed in a black squeare to differentiate it from the rest of events. The main features that can be highlithed are:
+The Home page focuses mainly on the display of the events, as we mentioned before the events appeared ordered in time. Each event is enclosed in a black square to differentiate it from the rest of events. The main features that can be highlighted are:
 
 - The name of the event is as well a clickable button for the user. 
 
@@ -55,9 +55,11 @@ The Home page focuses mainly on the display of the events, as we mentioned befor
 - User experience in the events section: 
 
   - The selection of size, colour and type of font, 
- helps the user to identify quickly the name of the event and the button for registring.
+ helps the user to identify quickly the name of the event and the button for registering.
  
   - The icons give important visual information about the event (location, date, author, number of participants) and help the user to navigate through the information provided.
+
+  -The colour animation on the attending icon gives 
   
    - The clickable button is easy  to identify, as it stands alone on the right corner, besides it gives straight and intuitive access to the new user who wants to register for an upcoming event.
 
@@ -81,9 +83,9 @@ Apart from the events, section the Home page also provides the user with a usefu
   - The selection of size, colour and type of font, 
  helps the user to identify quickly the different sections that can be found on the navbar.
 
-  - The colour transition animation in the navbar and the footer, as well as the change in the cursor icon, both give clear indications about the clickable property of the elements in these sections. Besides, they produce an eye-catching effect on the user when these elements are hoovered over, creating the need for clicking and a sense of mistery.
+  - The colour transition animation in the navbar and the footer, as well as the change in the cursor icon, both give clear indications about the clickable property of the elements in these sections. Besides, they produce an eye-catching effect on the user when these elements are hoovered over, creating the need for clicking and a sense of mystery.
 
-  - The Git hub cat icon in the footer,  gives important visual information about the names, as it makes explict their contribution as developers in the project. 
+  - The Git hub cat icon in the footer,  gives important visual information about the names, as it makes explicit their contribution as developers in the project. 
   
 
 <strong>Home page Events section</strong>
@@ -157,11 +159,62 @@ Here is an image of our ERD:
     <th>Bugs / Issues - tested across viewports of all devices using Google Dev Tools</th>
   </tr>
    <tr>
-    <td>As a user, I want a flowing, integrated user experience. </td>
-    <td>No bugs or issues that make interaction with site feel awkward</td>
-    <td>1. Three second delay between selecting answer and next question <br>
-    2. On large devices the "Enter name" box obscures the brand logo and feels like a pop-up rather than an integrated element of the UX package</td>
+    <td>As a user I want to know the name of the website so that I can share it with people. </td>
+    <td>Title of the app displayed on the header with an attractive font style.</td>
+    <td>The title sometimes does not collapse properly.</td>
    
+    
+  </tr>
+  <tr>
+    <td>As a user I want to be able to create an account so I can have my own user profile.</td>
+    <td>Create own account.<br>Log into profile.</td>
+    <td>Error message displayed in the middle.</td>
+  
+  </tr>
+   <tr>
+    <td>As a student I can join events so that I can foster growth in my interests or studies</td>
+    <td>Events page with all events displayed.<br>Organisers know who is attending.</td>
+    <td>On event detail page attending button can't see student status.</td>
+  <tr>
+    <td>As a user I can update my profile so that other users can learn more about me and i see more related content</td>
+    <td>Display name.<br>Display bio.</td>
+    <td>Does not have a list of future events to be attended.<br>Because of the way that the user is prompted to create a student profile, the view function that is triggered will always take them on to the user events page rather than wherever they had come from. </td>
+  </tr>
+  <tr>
+    <td>As a site owner I can collect feedback on events so that I can see which events are successful and popular and which arent.</td>
+    <td>Rate events.<br>Comments system by attendees.</td>
+    <td>None deteced.</td>
+    
+  </tr>
+  <tr>
+    <td>As a Organiser I can create events so that students can attend them.</td>
+    <td>Specify date, time, location, course or interest, and max. participants.<br>List of students attending.<br>Add an event picture.</td>
+    <td>List of students when event is expanded not.</td>
+    
+  </tr>
+  <tr>
+    <td>As a user, I want the site to be easily navigable.</td>
+    <td>Different features of site are clearly identifiable</td>
+    <td>None detected</td>
+    
+  </tr>
+  <tr>
+    <td>As a user, I want to be able to choose an answer from a pre-populated list.</td>
+    <td>List of answers to be selected</td>
+    <td>None detected</td>
+    
+  </tr>
+  <tr>
+    <td>As a user, I want to receive feedback on the answers.</td>
+    <td>Clear signal of correct / incorrect answer</td>
+    <td>None detected</td>
+    
+  </tr>
+  <tr>
+    <td>As a user, I want the site to be visually appealing.</td>
+    <td> Select complementary colour scheme. <br>
+    Different elements/features delineated.</td>
+    <td>None detected</td>
     
   </tr>
   </table>
@@ -182,8 +235,14 @@ Here is an image of our ERD:
 
 
   <tr>
-    <td>As a user I want to be able to store my highest score to see if I can beat it on my future visits.</td>
-    <td>Highest score from previous use visible (cookies required)</td>
+    <td>As a student I want to able to search filter events so that I can attend events of my interest.</td>
+    <td>Filter by category, words or interests.</td>
+    <td>N/A</td>
+  </tr>
+  
+  <tr>
+    <td>As a Student I can get notified of upcoming events so that I am less likely to miss or forget the event.</td>
+    <td>Get notifications from upcoming events.</td>
     <td>N/A</td>
   </tr>
   
@@ -199,10 +258,11 @@ Here is an image of our ERD:
     <th>Bugs / Issues</th>
   </tr>
   <tr>
-    <td>As a user, I want to have a countdown timer to challenge myself to answer more quickly.</td>
-    <td>A countdown timer to display either how long I have left to answer the question before it assigns to wrong</td>
+    <td>As a user I want to be able to follow other students.</td>
+    <td>Follow option.</td>
     <td>N/A</td>
   </tr>
+
 
 ## Fixed Bugs / Issues
 <br>
