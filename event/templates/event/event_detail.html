@@ -6,13 +6,13 @@
 <div class="row">
     <div class="col-12 col-md-6">
         <div class="aspect-ratio">
-            {% if "placeholder" in event.photo.url %}
-                <img class="event_image" src="{% static 'images/default.webp' %}"
-                    alt="placeholder image">
-            {% else %}
-                <img class="event_image" src="{{ event.photo.url }}"
-                    alt="{{ event.name }}">
-            {% endif %}
+            {% if event.photo_url == "" %}
+          <img class="event_image" src="{% static 'images/default.webp' %}"
+              alt="placeholder image">
+          {% else %}
+          <img class="event_image" src="{{ event.photo_url }}"
+              alt="{{ event.name }}">
+          {% endif %}
         </div>
     </div>
     <div class="col-12 col-md-6"> 
@@ -73,13 +73,17 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <p>{{ review.body }}<p>
+                            <p id="review{{ review.id }}">{{ review.body}}<p>
                             <p class="float-start">
                             {% for counter in "x"|rjust:review.rating %}
                             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
                             {% endfor %}
                             </p>
-                            <p class="float-end">{% if review.author == user%}<button review_id="{{review.id}}"class="delete-btn"><i class="fa-solid fa-trash-can" style="color: #e0141a;"></button>{% endif %}</i></p>
+                            <p class="float-end">
+                                {% if review.author == user%}
+                                <button class="btn btn-edit"><i id="edit_{{review.id}}" class="fa-regular fa-pen-to-square"></i></button>
+                                <button class="delete-btn"><i id="{{review.id}}" class="fa-solid fa-trash-can" style="color: #e0141a;"></i></button>
+                                    {% endif %}</p>
                         </div>
                     </div>
                 </section>
@@ -93,12 +97,35 @@
             {% csrf_token %}
             {{ review_form | crispy }}
             <button id="submitButton" type="submit"
-                class="button">Submit</button>
+                class="button" {% if user.is_authenticated%} {% else %} disabled {% endif %}>Submit</button>
             </form>
         </div>
     </div>
 </div>
 
-
+<!-- Delete confirmation modal -->
+<div class="modal fade" data-bs-backdrop="false" id="delete_Modal" tabindex="-1"
+aria-labelledby="deleteModalLabel" data-bs-toggle="modal" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title"
+        id="deleteModalLabel">Delete comment?</h5>
+        <button type="button" class="btn-close"
+        data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        Are you sure you want to delete your comment?
+        This action cannot be undone.
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+        data-bs-dismiss="modal">Close</button>
+        <a id="deleteConfirm" href="#" class="btn
+        btn-danger">Delete</a>
+    </div>
+    </div>
+</div>
+</div>
 
 {% endblock content %}
