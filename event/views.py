@@ -149,16 +149,16 @@ def review_delete(request, pk, review_id):
     """
     view to delete review
     """
-    queryset = Review.objects.all()
-    review = get_object_or_404(Review, pk=pk)
-
+    
+    #queryset = Review.objects.all()
+    review = get_object_or_404(Review, pk=review_id)
     if review.author == request.user:
         review.delete()
         messages.add_message(request, messages.SUCCESS, 'review deleted!')
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own reviews!')
 
-    return HttpResponseRedirect(reverse('event_detail', args=[review_id]))
+    return HttpResponseRedirect(reverse('event_detail', args=[pk]))
 
 def upload(request):
   context = dict( backend_form = PhotoForm())
