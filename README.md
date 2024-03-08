@@ -12,6 +12,8 @@ Besides, right at the top the users can see the logo of the page in bright blue 
 
 <strong>Landing page for first time users</strong>
 
+addd 
+
 <img src="imge urls goes here" alt="home page landing page first time">
 
 <strong>Home page across multiple devices</strong>
