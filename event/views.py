@@ -145,12 +145,41 @@ def event_detail(request, pk):
         }
     )
 
+def review_edit(request, pk, review_id):
+    """
+    Display an individual review for edit.
+
+    **Context**
+
+    ``event``
+        An instance of :model:`event.Event`.
+    ``review``
+        A single review related to the event.
+    ``review_form``
+        An instance of :form:`event.ReviewForm`
+    """
+    print("In review_edit")
+    if request.method == "POST":
+        event = get_object_or_404(Event, pk=pk)
+        review = get_object_or_404(Review, pk=review_id)
+        review_form = ReviewForm(data=request.POST, instance=review)
+
+        if review_form.is_valid() and review.author == request.user:
+            review = review_form.save(commit=False)
+            review.event = event
+            review.save()
+            messages.add_message(request, messages.SUCCESS, 'Review Updated!')
+        else:
+            messages.add_message(request, messages.ERROR,
+                'Error updating review!')
+
+    return HttpResponseRedirect(reverse('event_detail', args=[pk]))
+
 def review_delete(request, pk, review_id):
     """
     view to delete review
     """
     
-    #queryset = Review.objects.all()
     review = get_object_or_404(Review, pk=review_id)
     if review.author == request.user:
         review.delete()

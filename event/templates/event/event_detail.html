@@ -73,7 +73,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <p>{{ review.body }}<p>
+                            <p id="review{{ review.id }}">{{ review.body}}<p>
                             <p class="float-start">
                             {% for counter in "x"|rjust:review.rating %}
                             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
@@ -81,6 +81,7 @@
                             </p>
                             <p class="float-end">
                                 {% if review.author == user%}
+                                <button class="btn btn-edit"><i id="edit_{{review.id}}" class="fa-regular fa-pen-to-square"></i></button>
                                 <button class="delete-btn"><i id="{{review.id}}" class="fa-solid fa-trash-can" style="color: #e0141a;"></i></button>
                                     {% endif %}</p>
                         </div>
