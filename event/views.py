@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import UserCreationForm
 from cloudinary.forms import cl_init_js_callbacks
 from .models import Student, Event, Review
 from .forms import EventForm, StudentForm, PhotoForm, ReviewForm
@@ -186,3 +188,37 @@ def profile(request):
         'events': events,
         }
     )
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            # Successful login
+            return redirect('success_page')  # Replace with your success page
+        else:
+            # Unsuccessful login
+            messages.error(request, 'Invalid username or password. Please try again.')
+
+    return render(request, 'login.html')   
+
+
+def register_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Registration successful. You can now log in.')
+            return redirect('login')  # Replace with your login URL
+        else:
+            # Unsuccessful registration
+            messages.error(request, 'Invalid registration. Please correct the errors below.')
+
+    else:
+        form = UserCreationForm()
+
+    return render(request, 'register.html', {'form': form})

@@ -93,7 +93,7 @@
             {% csrf_token %}
             {{ review_form | crispy }}
             <button id="submitButton" type="submit"
-                class="button">Submit</button>
+                class="button" {% if user.is_authenticated%} {% else %} disabled {% endif %}>Submit</button>
             </form>
         </div>
     </div>

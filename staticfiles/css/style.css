@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Fonts */
 @font-face {
     font-family: IntroRust;
@@ -11,7 +12,10 @@
     --accent: #D30CD5;
     --dark: #010100;
     --light: #F8FFF4;
+
+    --bs-body-font-family: poppins, sans-serif;
 }
+
 /* Stlying for the title and name of the website */
 #appname {
     height: 100%;
@@ -37,6 +41,14 @@
     overflow: hidden;
 }
 
+.aspect-ratio-vert{
+  position: relative;
+    width: 100%;
+    padding-bottom: 90%; 
+    overflow: hidden;
+}
+
+.aspect-ratio-vert img,
 .aspect-ratio img {
     position: absolute;
     width: 100%;
@@ -46,27 +58,43 @@
 
 body{
     background-image: url("../images/school.webp");
+    list-style: none;
+       
+}
+
+main{
+  min-height:calc(100svh - 230px);
 }
 
 .event-section{
-    border: solid 5px #010100;
+    border: solid 0.25rem #010100;
 }
 
-.event-section > form > .button{
-    top: -3rem ;
-    float: right;
-    margin-right: 0.5rem;
+.comment-section{
+  border: solid 0.25rem #010100;
 }
 
-/* body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 0, 0, 0.5); 
-} */
+.counter{
+  font-size:2rem;
+  font-weight: 500;
+}
+
+/* text-colors */
+.green-text{
+  color:green;
+}
+
+.red-text{
+  color:red;
+}
+
+.modal {
+  z-index: 1060;
+}
+
+.modal-backdrop {
+  z-index: 500;
+}
 
 
 /* CSS */
@@ -79,7 +107,6 @@ body{
   color: var(--light);
   cursor: pointer;
   display: inline-block;
-  font-family: Circular,Helvetica,sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -.01em;
@@ -96,6 +123,7 @@ body{
 
   &:disabled {
     color: var(--light);
+    background-color: grey;
     cursor: auto;
   }
 
@@ -131,9 +159,6 @@ body{
   }
 }
   /* Navbar styling  credit to https://codepen.io/ettrics/pen/WRbGRN*/
-nav {
-    font-family: "Century Gothic", 'Lato', sans-serif;
-}
 
 
 .navbar-tabs {
@@ -143,8 +168,8 @@ nav {
     align-items: center;
     height: 10vh;
     position: relative;
-        text-align: center;
-        padding: 0 2em;
+    text-align: center;
+    padding: 0 2em;
 }
 
 
@@ -155,7 +180,7 @@ nav {
     bottom: 0;
     width: 100%;
     height: 70px;
-    background: #F8FFF4;
+    background: var(--light);
     z-index: 10;
     &--top {
         position: fixed;
@@ -171,35 +196,27 @@ nav {
     color: #010100;
     font-weight: bold;
     letter-spacing: 0.1rem;
-        transition: all 0.5s ease;
-        font-size: 2rem;
+    transition: all 0.5s ease;
+    font-size: 2rem;
       &:hover {
-            color:#F8FFF4;
-      background: #D30CD5;
-            transition: all 0.5s ease;
+          color:var(--light);
+          background: var(--accent);
+          transition: all 0.5s ease;
     }
 }
 
 /* Footer Styling */
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
 footer {
-    background-color: #003FA5;
+    background-color: var(--primary);
 	margin: 0;
-	font-family: 'Work Sans', sasns-serif;
 	font-weight: 800;
 
-.container {
-	width: 80%;
-	margin: 0 auto;
-}
-
-}
-
-
-footer::after {
-  content: '';
-  display: table;
-  clear: both;
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
 }
 
 #foot-nav {
@@ -225,32 +242,26 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: var(--accent); 
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 250ms;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
 }
 
-nav a:hover {
-  color: #D30CD5;
-}
 
-nav a::before {
-  content: '';
-  display: block;
-  height: 5px;
-   background-color: #D30CD5; 
-   ;
 
-  position: absolute;
-  top: 0;
-  width: 0%;
-
-  transition: all ease-in-out 250ms;
-}
-
-nav a:hover::before {
-  width: 100%;
-}
-
-/*Body styling */
-
-/* *{
-    background-color: #F8FFF4;
-} */

@@ -56,11 +56,7 @@
                 <a href="{% url 'event_detail' event.id %}" class="post-link">click</a>
                     <form action="{% url 'event_attending' event.id %}" method="POST">
                     {% csrf_token %}
-                    <button type="submit" name="event_id" value="{{ event.id }}" class="button float-end">{% if user.is_authenticated and user.student.attending.filter(id=event.id).exists %}
-                        Attending
-                    {% else %}
-                        Attend
-                    {% endif %}</button>
+                    <button type="submit" name="event_id" value="{{ event.id }}" class="button float-end">Attend</button>
                     </form>
             </div>
         </section>
