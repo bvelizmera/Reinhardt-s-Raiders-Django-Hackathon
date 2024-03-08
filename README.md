@@ -56,70 +56,55 @@ The Home page focuses mainly on the display of the events, as we mentioned befor
 
 
 
-<strong>Quiz length dropdown menu</strong>
- 
+## Authentication
 
-<img src="assets/images/readMeImages/options/questions.png" alt="Options page showing dropdown menu with different quiz lengths">
+### Registration
 
-<br>
+We have a registration page built using the default django user registration form, we have a custom view to display messages back to the user to feedback when the form is incorrect but as the default view isn't very customizable it displays mid-form. A fully bespoke solution would be needed next project
 
-<strong>Quiz subject dropup menu</strong>
+<div align="center">
+  <img src="./ReadmeFiles/ReadmeImages/registration.png">
+</div>
 
-<img src="assets/images/readMeImages/options/category.png" alt="Options page showing dropdown menu with different categories">
+### login
 
-<br>
-
-
-
- ## Quiz page
-
- The quiz page presents questions and possible answers, with buttons clearly delineated against their background. 
- 
- There is clear feedback when a user selects and then commits an answer. 
- 
- It lets you know the correct answer if you were wrong. There is also an updating score display. 
-
- There is a restart button in case the user decides they want to start again. 
-
-<strong>In-quiz page across multiple devices</strong>
-
-<img src="assets/images/readMeImages/amiresponsive/quiz-page.png" alt="Quiz page across different devices">
-
-<strong>Mid-quiz page showing answer committed and feedback provided</strong>
-
-<img src="assets/images/readMeImages/quizpage/quizpage2.png" alt="Quiz being played">
-
-<strong>Quiz complete screen</strong>
-
-<img src="assets/images/readMeImages/quizpage/quizcomplete.png" alt="Quiz complete page">
-
-## Design Choices
-
-We selected a rich and colourful style, using bright high contrast colours. We want the user to feel immersed in the experience of visiting our website. We derived our colours from https://visme.co/blog/website-color-schemes/
-“Bright Accent Colors”
-#242582
-#553D67
-#F64C72
-#99738E
-#2F2FA2
-
-We selected the font style Poppins 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'. It works well as a fun, slightly futuristic, slightly unusual font; but not unusual enough to overpower the rest of the page.
-
-## Wire Frames
-
-
-<strong>Landing page for First Time User followed by Options Pages for repeat users<br></strong>
 
 
 
 
-<img src="assets/images/readMeImages/wireframes/wflandingpagefinal2.png" alt="Wireframe image of Insert name and Options page">
+## Design Choices
 
-## Quiz page
+### Fonts 
 
-We ensured that we provided wireframes to cover all the different stages of user experience and features
+IntroRust was chosen as a more interesting font that would give character to the page. It was sourced from [here](https://www.fontspring.com/fonts/fontfabric/intro-rust-free?utm_source=fontsquirrel.com&utm_medium=download_link&utm_campaign=intro-rust#firstfreeproduct)
 
-<img src="assets/images/readMeImages/wireframes/wfquizfinal2.png" alt="Wireframe image of In-Quiz page">
+We selected the font style Poppins 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'. It's is sans serif, so very clear and easy to read. it's popularity on the web gives it instant recognition as well'
+
+
+We selected more plain and simple design with professional colours but a big, vibrant pop of pink as an accent. We derived our colours from [coolors](https://coolors.co/012765-d30cd5-003fa5-010100-f8fff4)
+
+<div align="center">
+  <img src="./ReadmeFiles/ReadmeImages/coolors.png">
+</div>
+
+### Wire Frames
+
+<strong>The wireframes were constructed using Balsamiq in a group call to get feedback on all design choices. This was so front-end and back-end could be aligned even from the early stages to think of any pitfalls that could occur<br></strong>
+
+You can view the wireframes [here](./ReadmeFiles/Wireframes/CampusCampfire.pdf)
+
+<div align="center">
+  <img src="./ReadmeFiles/ReadmeImages/wireframe.png">
+</div>
+
+### Database
+
+We tried to plan out our models before had to avoid having to do migrations mid-project. we tried to work out the field types, one-to-many, PK or FK etc. 
+
+Here is an image of our ERD:
+<div align="center">
+  <img src="./ReadmeFiles/ReadmeImages/ERD.png">
+</div>
 
 ## User Stories, features and bugs
 
@@ -395,7 +380,3 @@ Wireframes produced using Balsamiq WireFrames https://balsamiq.com/wireframes/?g
 
 Timer used to display delay issue https://www.online-stopwatch.com/
 
-
-## Other General Project Advice
-
-Enjoy the Quiz!
