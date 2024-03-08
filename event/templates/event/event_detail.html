@@ -1,5 +1,6 @@
 {% extends 'base.html' %} 
 {% block content %}
+{% load static %}
 
 <div class="row">
     <div class="col-12 col-md-6">
@@ -8,7 +9,7 @@
                 <img class="event_image" src="{% static 'images/default.webp' %}"
                     alt="placeholder image">
             {% else %}
-                <img class="event_image" src="{{ event.image.url }}"
+                <img class="event_image" src="{{ event.photo.url }}"
                     alt="{{ event.name }}">
             {% endif %}
         </div>
@@ -54,7 +55,7 @@
         </table>
     </div>
     <div class="col-6">
-        {{ event.attending }}<br>
+        {{ event.attending.count }} / {{ event.max_capacity }} attending
     </div>
 </div>
 

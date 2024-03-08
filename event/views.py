@@ -69,9 +69,12 @@ def show_user_events(request):
     context = dict( backend_form = EventForm())
     # Handle form data
     if request.method == "POST":
+        event_form = EventForm(data=request.POST)
+        print(event_form)
         if event_form.is_valid():
             event = event_form.save(commit=False)
             event.creator = request.user
+            print(event)
             event.save()
             # messages.add_message(
             #     request, messages.SUCCESS,
@@ -136,3 +139,19 @@ def upload(request):
         form.save()
 
   return render(request, 'event/upload.html', context)
+
+def profile(request):
+
+    # queryset = Student.objects.filter(user=2)
+
+    # queryset = queryset.filter(user=2)
+
+    # prof = request.user
+    # print(prof)
+    profile = get_object_or_404(Student, user=request.user)
+    print(profile)
+    return render(request,
+        'event/user_profile.html',
+        {'profile': profile,
+        }
+    )
