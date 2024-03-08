@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import generic
+from django.contrib import messages
 from cloudinary.forms import cl_init_js_callbacks
-from .models import Student, Event
-from .forms import EventForm, StudentForm, PhotoForm
+from .models import Student, Event, Review
+from .forms import EventForm, StudentForm, PhotoForm, ReviewForm
+
 
 # additional function
 def is_viewer_student(request):
@@ -120,6 +122,8 @@ def create_student(request):
 def event_detail(request, pk):
 
     queryset = Event.objects.all()
+    event_instance = Event.objects.get(pk__contains=pk)
+    print(event_instance)
 
     event = get_object_or_404(queryset, pk=pk)
     if request.method == "POST":
@@ -130,14 +134,31 @@ def event_detail(request, pk):
             review.author = request.user
             review.save()
            
+    reviews = event_instance.reviews.all()
 
     review_form = ReviewForm()
     return render(request,
         'event/event_detail.html',
         {'event': event,
          'review_form':review_form,
+         'reviews': reviews,
         }
     )
+
+def review_delete(request, pk, review_id):
+    """
+    view to delete review
+    """
+    queryset = Review.objects.all()
+    review = get_object_or_404(Review, pk=pk)
+
+    if review.author == request.user:
+        review.delete()
+        messages.add_message(request, messages.SUCCESS, 'review deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own reviews!')
+
+    return HttpResponseRedirect(reverse('event_detail', args=[review_id]))
 
 def upload(request):
   context = dict( backend_form = PhotoForm())
@@ -152,16 +173,16 @@ def upload(request):
 
 def profile(request):
 
-    # queryset = Student.objects.filter(user=2)
-
-    # queryset = queryset.filter(user=2)
-
-    # prof = request.user
-    # print(prof)
+    student=request.user
+    print(Student.user)
+    
     profile = get_object_or_404(Student, user=request.user)
-    print(profile)
+    events = Event.objects.filter(attending__username__contains=request.user)
+    
+    
     return render(request,
         'event/user_profile.html',
         {'profile': profile,
+        'events': events,
         }
     )

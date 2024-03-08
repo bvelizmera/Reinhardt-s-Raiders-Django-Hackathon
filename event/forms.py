@@ -40,10 +40,10 @@ class EventForm(forms.ModelForm):
         label='Excerpt',
         widget=forms.Textarea(attrs={'type': 'text','rows': 4, 'cols': 40})
     )
-    photo = forms.CharField(
-        label='Photo',
-        widget=forms.FileInput(attrs={'type': 'file'})
-    )
+    # photo = forms.CharField(
+    #     label='Photo',
+    #     widget=forms.FileInput(attrs={'type': 'file'})
+    # )
     class Meta:
         model = Event
         fields = ('name', 'date', 'time', 'location',
@@ -69,5 +69,3 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('body', 'rating', 'has_attended')
-
-

@@ -5,8 +5,68 @@
 
 <!-- Include event_form here -->
 <div class="justify-content-center">
-    {{ profile.lastname }}<br>
-    {{ profile.firstname }}
+    <div class="row">
+        <div class="col-12 col-lg-4">
+            <div class="aspect-ratio-vert">
+                {% if "placeholder" in profile.photo.url %}
+                    <img class="profile-image" src="{% static 'images/nobody.jpg' %}"
+                        alt="placeholder image">
+                {% else %}
+                    <img class="profile-image" src="{{ profile.photo.url }}"
+                        alt="{{ profile.name }}">
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-12 col-lg-8">
+            <div class="row">
+                <div class="col-12">
+                    <p>{{ profile.firstname }} {{ profile.lastname }}</p>
+                    <p>{{ profile.bio }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="button"><i class="fa-solid fa-pencil"></i> edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            {% for event in events %}
+        <section class="event-section row m-1">
+            <div class="col-12 col-lg-4">
+                <div class="aspect-ratio">
+                    {% if "placeholder" in event.photo.url %}
+                    <img class="event_image" src="{% static 'images/default.webp' %}"
+                        alt="placeholder image">
+                    {% else %}
+                    <img class="event_image" src="{{ event.photo.url }}"
+                        alt="{{ event.name }}">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-12 col-lg-8">
+                <h2>{{ event.name }}</h2>
+                <h3><i class="fa-solid fa-location-dot"></i> {{ event.location }}</h3>
+                <h4><i class="fa-solid fa-calendar"></i> {{ event.date }} | {{ event.time }}</h4>
+                <p><i class="fa-solid fa-user"></i> {{ event.creator }}</p>
+
+
+                <a href="{% url 'event_detail' event.id %}" class="post-link">click</a>
+                    <form action="{% url 'event_attending' event.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" name="event_id" value="{{ event.id }}" class="button float-end">{% if user.is_authenticated and user.student.attending.filter(id=event.id).exists %}
+                        Attending
+                    {% else %}
+                        Attend
+                    {% endif %}</button>
+                    </form>
+            </div>
+        </section>
+    {% endfor %}
+        </div>
+    </div>
 </div>
 
 
