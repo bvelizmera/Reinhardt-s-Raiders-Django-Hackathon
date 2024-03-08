@@ -68,13 +68,13 @@ The Home page focuses mainly on the display of the events, as we mentioned befor
 
 ## Home page (Navbar and foooter) 
 
-Apart from the events, section the Home page also povides the user with a useful navbar and a informative footer. The navbar is divided into three main areas of interest; Home, Register and Login and the footer proportionates information of interest about the developers that collaborated on this project. The main features that can be highlithed are:
+Apart from the events, section the Home page also provides the user with a useful navbar and a informative footer. The navbar is divided into three main areas of interest; Home, Register and Login and the footer proportionate information of interest about the developers that collaborated on this project. The main features that can be highlithed are:
 
-- The clickable sections in both, the navabar and the footer 
+- The clickable sections in both, the navbar and the footer 
 
-- The colour animation when the user hoovers over the clickable parts.
+- The colour animation when the user hovers over the clickable parts.
 
-- The change in the cursor icon when the user hoovers over the clickable parts.
+- The change in the cursor icon when the user hovers over the clickable parts.
 
 - User experience in the navbar and footer section: 
 
