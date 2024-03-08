@@ -1,3 +1,4 @@
+// Event edit/delete
 const editButtons = document.getElementsByClassName('btn-edit');
 const reviewText = document.getElementById("id_body");
 const reviewForm = document.getElementById('reviewForm');
