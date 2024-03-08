@@ -57,9 +57,7 @@
 }
 
 body{
-    background-image: url("../images/school.webp");
-    list-style: none;
-       
+    background-image: url("../images/school.webp");      
 }
 
 main{
@@ -86,14 +84,6 @@ main{
 
 .red-text{
   color:red;
-}
-
-.modal {
-  z-index: 1060;
-}
-
-.modal-backdrop {
-  z-index: 500;
 }
 
 
@@ -242,7 +232,6 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
-
   &:hover {
     color: var(--accent);
   }
@@ -258,10 +247,8 @@ nav a {
     transition: all ease-in-out 250ms;
   }
 
-  &:hover::before {
-    width: 100%;
-  }
+nav a:hover::before {
+  width: 100%;
 }
 
-
-
+/*Body styling */
