@@ -2,7 +2,6 @@
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
-{% load cloudinary %}
 {% url 'non_student' as non_student_url %}
 {% url 'upload_image' as image_upload_url %}
 
@@ -11,21 +10,59 @@
 <h1>{{ request.user }}'s Events</h1>
 <p>You have created {{ events_queryset|length }} events</p>
 {% for event in events_queryset %}
-<h2>{{ event.name }}</h2>
-{% cloudinary event.photo format="png" width=120 height=80 crop="fill" %}
-{% if "placeholder" in event.photo.url %}
-<img class="event_image" src="static/images/default.webp"
-    alt="placeholder image">
-{% else %}
-<img class="event_image" src=" {{ event.photo.url }}"
-    alt="{{ event.name }}">
-{% endif %}
-<h3>{{ event.location }}</h3>
-<h4>{{ event.date }} | {{ event.time }}</h4>
-<p>{{ event.creator }}</p>
+<section class="event-section row m-1">
+  <div class="col-12 col-lg-4">
+      <div class="aspect-ratio">
+          {% if "placeholder" in event.photo.url %}
+          <img class="event_image" src="{% static 'images/default.webp' %}"
+              alt="placeholder image">
+          {% else %}
+          <img class="event_image" src="{{ event.photo.url }}"
+              alt="{{ event.name }}">
+          {% endif %}
+      </div>
+  </div>
+  <div class="col-12 col-lg-8">
+      <span>
+          <p class="counter float-end {% if event.attending.count == event.max_capacity  %}
+          red-text{% else  %} green-text{% endif %}"><i class="fa-solid fa-person"></i> {{ event.attending.count }} / {{ event.max_capacity }} </p>
+          <h2>{{ event.name }}</h2>
+      </span>
+      <h3><i class="fa-solid fa-location-dot"></i> {{ event.location }}</h3>
+      <h4><i class="fa-solid fa-calendar"></i> {{ event.date }} | {{ event.time }}</h4>
+      <p><i class="fa-solid fa-user"></i> {{ event.creator }}</p>
+
+
+      <a href="{% url 'event_detail' event.id %}" class="post-link">click</a>
+
+      {% if user.is_authenticated and is_student %}
+          <form action="{% url 'event_attending' event.id %}" method="POST">
+          {% csrf_token %}
+          <!-- TODO: need to implement something to reflect whether user is attending -->
+          <button type="submit" name="event_id" value="{{ event.id }}" class="button float-end" {% if event.attending.count == event.max_capacity  %}
+          disabled{% endif %}>Attend</button>
+          <!-- May need to be in the form of a line of text under the button including *You* if attending -->
+          </form>
+          <!-- Make sure that visitors are registered to click 'attend' -->
+          {% elif not user.is_authenticated %}
+          <p class="create_profile_warning">You need to register and create a student profile to attend</p>
+          <form action="{% url 'redirect_to_signup' %}" method="POST">
+              {% csrf_token %}
+              <button type="submit" name="new_student" class="button float-end" {% if event.attending.count == event.max_capacity  %}
+              disabled{% endif %}>Register</button>
+          </form>
+          <!-- Registered users must also have a student profile -->
+          {% elif not is_student %}
+          <p class="create_profile_warning">You need to create a student profile to attend</p>
+          <form action="{% url 'non_student' %}" method="POST">
+              {% csrf_token %}
+              <button type="submit" name="new_student" value="{{ user.username }}" class="button float-end"{% if event.attending.count == event.max_capacity  %}
+              disabled{% endif %}>Create Profile</button>
+          </form>
+      {% endif %}
+  </div>
+</section>
 {% endfor %}
-<h2>Try uploading an image here:</h2>
-<a href="{% url 'upload_image' %}">Upload image</a>
 <!-- Include event_form here -->
 <div class="justify-content-center">
     <div class="col-6 newEventDiv">
@@ -35,15 +72,16 @@
         {{ event_form | crispy }}
         {% csrf_token %}
         <button class="button" id="submitButton" type="submit"
-            class="btn btn-signup btn-lg">Submit</button>
+            class="button">Submit</button>
         </form>
     </div>
+    <div class="d-none" id="photo_url"></div>
 </div>
 {% elif not user.is_authenticated %}
 <p class="create_profile_warning">You need to register and create a student profile to access your events</p>
 <form action="{% url 'redirect_to_signup' %}" method="POST">
     {% csrf_token %}
-    <button type="submit" name="new_user" class="btn btn-info">Register</button>
+    <button type="submit" name="new_user" class="button">Register</button>
 </form>
 <!-- Registered users must also have a student profile -->
 {% elif not is_student %}
@@ -51,8 +89,32 @@
 <p class="create_profile_warning">You need to create a student profile to access your events</p>
 <form action="{% url 'non_student' %}" method="POST">
     {% csrf_token %}
-    <button type="submit" name="new_student" value="{{ user.username }}" class="btn btn-info">Create Profile</button>
+    <button type="submit" name="new_student" value="{{ user.username }}" class="button">Create Profile</button>
 </form>
 {% endif %}
+
+<button id="upload_widget" class="cloudinary-button">Upload files</button>
+
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+
+<script type="text/javascript">  
+function populateWithURL(image_url){
+    urlContainer = document.getElementById("photo_url")
+    urlContainer.innerText = image_url
+}
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'ddfqaz73q', 
+  uploadPreset: 'vaxtqmwz'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info);
+      populateWithURL(result.info.url) 
+    }
+  }
+)
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+</script>
 
 {% endblock content %}
