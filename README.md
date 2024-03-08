@@ -23,7 +23,7 @@ Besides, right at the top the users can see the logo of the page in bright blue 
 
 ## Home page (Site Logo)
 
-The fisrt element that the user sees when visiting site, is the logo: Campfire Campus in big, bright blue font. 
+The first element that the user sees when visiting site, is the logo: Campfire Campus in big, bright blue font. 
 
 - User experience in the Logo section: 
 
@@ -32,7 +32,7 @@ The fisrt element that the user sees when visiting site, is the logo: Campfire C
 
   - The name of the site "Campfire Campus" indicates clearly that this is a website related with the academic world. In addition, the name indicates that it is a place for socialising and students are welcomed. 
   
-  - Thanks to the Logo the user would feel comfortable and with a postive attitude even before checking the rest of the page. 
+  - Thanks to the Logo the user would feel comfortable and with a positive attitude even before checking the rest of the page. 
 
  <strong>Home page Logo section</strong>
 
@@ -42,7 +42,7 @@ The fisrt element that the user sees when visiting site, is the logo: Campfire C
 
 ## Home page (Events) 
 
-The Home page focuses mainly on the display of the events, as we mentioned before the events oppeared ordered in time. Each event is enclosed in a black squeare to differentiate it from the rest of events. The main features that can be highlithed are:
+The Home page focuses mainly on the display of the events, as we mentioned before the events appeared ordered in time. Each event is enclosed in a black square to differentiate it from the rest of events. The main features that can be highlighted are:
 
 - The name of the event is as well a clickable button for the user. 
 
@@ -55,9 +55,11 @@ The Home page focuses mainly on the display of the events, as we mentioned befor
 - User experience in the events section: 
 
   - The selection of size, colour and type of font, 
- helps the user to identify quickly the name of the event and the button for registring.
+ helps the user to identify quickly the name of the event and the button for registering.
  
   - The icons give important visual information about the event (location, date, author, number of participants) and help the user to navigate through the information provided.
+
+  -The colour animation on the attending icon gives 
   
    - The clickable button is easy  to identify, as it stands alone on the right corner, besides it gives straight and intuitive access to the new user who wants to register for an upcoming event.
 
@@ -81,9 +83,9 @@ Apart from the events, section the Home page also provides the user with a usefu
   - The selection of size, colour and type of font, 
  helps the user to identify quickly the different sections that can be found on the navbar.
 
-  - The colour transition animation in the navbar and the footer, as well as the change in the cursor icon, both give clear indications about the clickable property of the elements in these sections. Besides, they produce an eye-catching effect on the user when these elements are hoovered over, creating the need for clicking and a sense of mistery.
+  - The colour transition animation in the navbar and the footer, as well as the change in the cursor icon, both give clear indications about the clickable property of the elements in these sections. Besides, they produce an eye-catching effect on the user when these elements are hoovered over, creating the need for clicking and a sense of mystery.
 
-  - The Git hub cat icon in the footer,  gives important visual information about the names, as it makes explict their contribution as developers in the project. 
+  - The Git hub cat icon in the footer,  gives important visual information about the names, as it makes explicit their contribution as developers in the project. 
   
 
 <strong>Home page Events section</strong>
