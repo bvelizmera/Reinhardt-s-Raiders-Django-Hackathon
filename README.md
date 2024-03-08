@@ -21,6 +21,23 @@ Besides, right at the top the users can see the logo of the page in bright blue 
 
 <br>
 
+## Home page (Site Logo)
+
+The fisrt element that the user sees when visiting site, is the logo: Campfire Campus in big, bright blue font. 
+
+- User experience in the Logo section: 
+
+  - The selection of size, colour and type of font, 
+ helps the user to identify quickly the name of the site.
+
+  - The name of the site "Campfire Campus" indicates clearly that this is a website related with the academic world. In addition, the name indicates that it is a place for socialising and students are welcomed. 
+  
+  - Thanks to the Logo the user would feel comfortable and with a postive attitude even before checking the rest of the page. 
+
+ <strong>Home page Logo section</strong>
+
+<img src="imge urls goes here" alt="Home page Events section">  
+
 
 
 ## Home page (Events) 
@@ -37,7 +54,7 @@ The Home page focuses mainly on the display of the events, as we mentioned befor
 
 - User experience in the events section: 
 
-  - The slection of size, colour and type of font, 
+  - The selection of size, colour and type of font, 
  helps the user to identify quickly the name of the event and the button for registring.
  
   - The icons give important visual information about the event (location, date, author, number of participants) and help the user to navigate through the information provided.
@@ -50,6 +67,29 @@ The Home page focuses mainly on the display of the events, as we mentioned befor
 
 
 ## Home page (Navbar and foooter) 
+
+Apart from the events, section the Home page also povides the user with a useful navbar and a informative footer. The navbar is divided into three main areas of interest; Home, Register and Login and the footer proportionates information of interest about the developers that collaborated on this project. The main features that can be highlithed are:
+
+- The clickable sections in both, the navabar and the footer 
+
+- The colour animation when the user hoovers over the clickable parts.
+
+- The change in the cursor icon when the user hoovers over the clickable parts.
+
+- User experience in the navbar and footer section: 
+
+  - The selection of size, colour and type of font, 
+ helps the user to identify quickly the different sections that can be found on the navbar.
+
+  - The colour transition animation in the navbar and the footer, as well as the change in the cursor icon, both give clear indications about the clickable property of the elements in these sections. Besides, they produce an eye-catching effect on the user when these elements are hoovered over, creating the need for clicking and a sense of mistery.
+
+  - The Git hub cat icon in the footer,  gives important visual information about the names, as it makes explict their contribution as developers in the project. 
+  
+
+<strong>Home page Events section</strong>
+
+<img src="imge urls goes here" alt="Home page Events section">
+
 
 
 
