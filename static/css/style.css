@@ -46,6 +46,7 @@
 
 body{
     background-image: url("../images/school.webp");
+
 }
 
 .event-section{
@@ -191,6 +192,7 @@ footer {
 .container {
 	width: 80%;
 	margin: 0 auto;
+  height: 100%;
 }
 
 }
@@ -252,5 +254,5 @@ nav a:hover::before {
 /*Body styling */
 
 /* *{
-    background-color: #F8FFF4;
+    background-color: red;
 } */
