@@ -1,5 +1,6 @@
 {% extends 'base.html' %} 
 {% block content %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 <div class="row">
@@ -58,5 +59,17 @@
         {{ event.attending.count }} / {{ event.max_capacity }} attending
     </div>
 </div>
-
+<!-- Include event_form here -->
+<div class="justify-content-center">
+    <div class="col-6 newEventDiv">
+        <h2>Create Your Review</h2>
+        <form id="reviewForm" method="post"
+                    style="margin-top: 1.3em;">
+        {{ review_form | crispy }}
+        {% csrf_token %}
+        <button id="submitButton" type="submit"
+            class="btn btn-signup btn-lg">Submit</button>
+        </form>
+    </div>
+</div>
 {% endblock content %}

@@ -70,10 +70,10 @@ def show_user_events(request):
     # Handle form data
     if request.method == "POST":
         event_form = EventForm(data=request.POST)
-        print(event_form)
         if event_form.is_valid():
             event = event_form.save(commit=False)
             event.creator = request.user
+            print(event.photo)
             print(event)
             event.save()
             # messages.add_message(
@@ -122,10 +122,20 @@ def event_detail(request, pk):
     queryset = Event.objects.all()
 
     event = get_object_or_404(queryset, pk=pk)
+    if request.method == "POST":
+        review_form = ReviewForm(data=request.POST)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.event = event
+            review.author = request.user
+            review.save()
+           
 
+    review_form = ReviewForm()
     return render(request,
         'event/event_detail.html',
         {'event': event,
+         'review_form':review_form,
         }
     )
 
