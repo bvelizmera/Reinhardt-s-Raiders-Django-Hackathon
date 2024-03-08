@@ -79,7 +79,10 @@
                             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
                             {% endfor %}
                             </p>
-                            <p class="float-end">{% if review.author == user%}<button class="delete-btn" href="{% url 'review_delete' event.id review.id%}"><i id="{{review.id}}" class="fa-solid fa-trash-can" style="color: #e0141a;"></button>{% endif %}</i></p>
+                            <p class="float-end">
+                                {% if review.author == user%}
+                                <button class="delete-btn" href="{% url 'review_delete' event.id review.id%}"><i id="{{review.id}}" class="fa-solid fa-trash-can" style="color: #e0141a;"></i></button>
+                                    {% endif %}</p>
                         </div>
                     </div>
                 </section>
