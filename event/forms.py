@@ -59,7 +59,7 @@ class StudentForm(forms.ModelForm):
     """
     class Meta:
         model = Student
-        fields = ('firstname', 'lastname', 'bio', 'photo')
+        fields = ('firstname', 'lastname', 'bio', 'photo_url')
 
 class PhotoForm(forms.ModelForm):
   class Meta:
