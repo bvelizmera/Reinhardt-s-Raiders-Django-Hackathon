@@ -75,7 +75,8 @@ def show_user_events(request):
         if event_form.is_valid():
             event = event_form.save(commit=False)
             event.creator = request.user
-            print(event.photo)
+            # event.photo.url = event.photo_url
+            print(event.photo_url)
             print(event)
             event.save()
             # messages.add_message(
