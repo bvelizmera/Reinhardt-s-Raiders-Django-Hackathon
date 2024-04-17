@@ -2,24 +2,28 @@
 
 <h2>Introduction</h2>
 
-Campus Campfire is a site for college students who whan to connect, create events and leave their review on these events. As well students can select if they want to attend to an event and rate it onece it takes place.
+Campus Campfire is a site allowing college students to connect, create  events and leave their reviews on them. Students are also able to indicate that they will attend an event, and give it a star rating.
+
+<img src='./ReadmeFiles/ReadmeImages/amiresponsive.png' alt='Responsiveness image of site, displayed on multiple devices.'>
+
+The live site is deployed on Heroku [here](https://campus-campfire-d6ae0237c555.herokuapp.com/).
+
+## Site Development
+This site was developed using an Agile methodology, with a focus on getting a minimum viable product in place first before adding further features. User stories were sorted using MoSCoW prioritisation, and GitHub projects was used for the project board. An image of this at the end of the project can be seen below.
+
+<img src='./ReadmeFiles/ReadmeImages/project_board.png' alt='Project board'>
+
+User experience was considered throughout the development process in order to give a cohesive feel.
 
 ## Landing page for first time users
 
-The landing page allows users to see a display with all the upcommimg events ordered in chronologically way, being the closest one, the first appearing on the top of the page.
+The landing page allows users to see a display with all upcoming events, including details such as how many students are attending. Users are unable to indicate that they will attend an event until they have registered as a student and logged in.
 
-Besides, right at the top the users can see the logo of the page in bright blue with a navbar under it that contains the main sections of the site: Home, Register and Login. Alonside with the navbar, on the opposte side of the page the user can find the footer with the names of the developers who worked together on this project. 
+Users can see the site logo at the top of the page in bright blue with a navbar under it that contains the main sections of the site: Home, Register and Login. At the bottom of the page the user can find the footer with the names of the developers who worked together on this project. 
 
 <strong>Landing page for first time users</strong>
 
 <img src="./ReadmeFiles/ReadmeImages/landing_page.png" alt="home page landing page first time">
-
-<strong>Home page across multiple devices</strong>
-
-
-<img src="image url goes here" alt="Options page across different devices">
-
-<br>
 
 ## Home page (Site Logo)
 
@@ -42,7 +46,7 @@ The first element that the user sees when visiting site, is the logo: Campfire C
 
 ## Home page (Events) 
 
-The Home page focuses mainly on the display of the events, as we mentioned before the events appeared ordered in time. Each event is enclosed in a black square to differentiate it from the rest of events. The main features that can be highlighted are:
+The Home page focuses mainly on the display of the events, as mentioned above. Each event is enclosed in a black square to differentiate it from the rest of events. The main features that can be highlighted are:
 
 - The name of the event is as well a clickable button for the user. 
 
@@ -50,7 +54,8 @@ The Home page focuses mainly on the display of the events, as we mentioned befor
 
 - On the top right corner, the user can see the number of available spots and the number of participants attending with icon next to it. 
 
-- Finally, on the bottom right corner there is a clickable button for those students who want to register.
+- Finally, on the bottom right corner there is a clickable button for those students who want to indicate that they will attend.
+  - This button displays as "Register" for non-authenticated users, alongside a prompt explaining that they must register & create a student profile in order to attend. Clicking the button will direct them to the registration page.
 
 - User experience in the events section: 
 
@@ -59,18 +64,18 @@ The Home page focuses mainly on the display of the events, as we mentioned befor
  
   - The icons give important visual information about the event (location, date, author, number of participants) and help the user to navigate through the information provided.
 
-  -The colour animation on the attending icon gives 
+  - The colour of the attending icon helps it stand out on the page.
   
-   - The clickable button is easy  to identify, as it stands alone on the right corner, besides it gives straight and intuitive access to the new user who wants to register for an upcoming event.
+  - The clickable button is easy  to identify, as it stands alone on the right corner, besides it gives straight and intuitive access to the new user who wants to register for an upcoming event. It also grows and changes the cursor when hovered over to add to this.
 
 <strong>Home page Events section</strong>
 
-<img src="imge urls goes here" alt="Home page Events section">
+<img src="./ReadmeFiles/ReadmeImages/homepage_event.png" alt="Home page Events section">
 
 
 ## Home page (Navbar and foooter) 
 
-Apart from the events, section the Home page also provides the user with a useful navbar and a informative footer. The navbar is divided into three main areas of interest; Home, Register and Login and the footer proportionate information of interest about the developers that collaborated on this project. The main features that can be highlithed are:
+Apart from the events section the Home page also provides the user with a useful navbar and an informative footer. The navbar is divided into three main areas of interest: Home, Register and Login and the footer proportionate information of interest about the developers that collaborated on this project. Once the user is logged in the navbar links change to Home, My Events, Profile and Logout. The main features that can be highlighted are:
 
 - The clickable sections in both, the navbar and the footer 
 
@@ -83,16 +88,20 @@ Apart from the events, section the Home page also provides the user with a usefu
   - The selection of size, colour and type of font, 
  helps the user to identify quickly the different sections that can be found on the navbar.
 
-  - The colour transition animation in the navbar and the footer, as well as the change in the cursor icon, both give clear indications about the clickable property of the elements in these sections. Besides, they produce an eye-catching effect on the user when these elements are hoovered over, creating the need for clicking and a sense of mystery.
+  - The colour transition animation in the navbar and the footer, as well as the change in the cursor icon, both give clear indications about the clickable property of the elements in these sections. Besides, they produce an eye-catching effect on the user when these elements are hovered over, creating the need for clicking and a sense of mystery.
 
   - The Git hub cat icon in the footer,  gives important visual information about the names, as it makes explicit their contribution as developers in the project. 
   
 
-<strong>Home page Events section</strong>
+<strong>Navbar: new user</strong>
 
 <img src="./ReadmeFiles/ReadmeImages/navbar.png" alt="Home page Navbar section">
 
-<br>
+<strong>Navbar: logged in</strong>
+
+<img src="./ReadmeFiles/ReadmeImages/navbar_loggedin.png" alt="Home page Navbar section">
+
+<strong>Footer</strong>
 
 <img src="./ReadmeFiles/ReadmeImages/footer.png" alt="Home page Footer section">
 
@@ -101,20 +110,23 @@ Apart from the events, section the Home page also provides the user with a usefu
 
 ## Authentication
 
-### Registration
+The allauth package was used to implement authentication for this site, and the templates adapted to fit the site theme. Users are able to sign up (register), log in and log out.
 
-We have a registration page built using the default django user registration form, we have a custom view to display messages back to the user to feedback when the form is incorrect but as the default view isn't very customizable it displays mid-form. A fully bespoke solution would be needed next project
-
+### Sign up
 <div align="center">
   <img src="./ReadmeFiles/ReadmeImages/registration.png">
 </div>
 
-### login
-
-We have a simple frictionless login page so users can log in quickly, it will feedback to the user if there are errors. a future feature would be password recovery via email
+### Log in
 
 <div align="center">
   <img src="./ReadmeFiles/ReadmeImages/login.png">
+</div>
+
+### Log out
+
+<div align="center">
+  <img src="./ReadmeFiles/ReadmeImages/logout.png">
 </div>
 
 ## Design Choices
@@ -123,8 +135,7 @@ We have a simple frictionless login page so users can log in quickly, it will fe
 
 IntroRust was chosen as a more interesting font that would give character to the page. It was sourced from [here](https://www.fontspring.com/fonts/fontfabric/intro-rust-free?utm_source=fontsquirrel.com&utm_medium=download_link&utm_campaign=intro-rust#firstfreeproduct)
 
-We selected the font style Poppins 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'. It's is sans serif, so very clear and easy to read. it's popularity on the web gives it instant recognition as well'
-
+We selected the font style [Poppins](https://fonts.google.com/specimen/Poppins). It's a sans serif font, so very clear and easy to read. Its popularity on the web gives it instant recognition as well.
 
 We selected more plain and simple design with professional colours but a big, vibrant pop of pink as an accent. We derived our colours from [coolors](https://coolors.co/012765-d30cd5-003fa5-010100-f8fff4)
 
@@ -134,7 +145,7 @@ We selected more plain and simple design with professional colours but a big, vi
 
 ### Wire Frames
 
-<strong>The wireframes were constructed using Balsamiq in a group call to get feedback on all design choices. This was so front-end and back-end could be aligned even from the early stages to think of any pitfalls that could occur<br></strong>
+The wireframes were constructed using Balsamiq in a group call to get feedback on all design choices. This was so front-end and back-end could be aligned even from the early stages to think of any pitfalls that could occur<br>
 
 You can view the wireframes [here](./ReadmeFiles/Wireframes/CampusCampfire.pdf)
 
@@ -144,7 +155,7 @@ You can view the wireframes [here](./ReadmeFiles/Wireframes/CampusCampfire.pdf)
 
 ### Database
 
-We tried to plan out our models before had to avoid having to do migrations mid-project. we tried to work out the field types, one-to-many, PK or FK etc. 
+We planned our models beforehand to avoid having to do migrations mid-project. We established the field types, one-to-many, PK or FK etc. 
 
 Here is an image of our ERD:
 <div align="center">
@@ -184,7 +195,7 @@ Here is an image of our ERD:
   <tr>
     <td>As a site owner I can collect feedback on events so that I can see which events are successful and popular and which arent.</td>
     <td>Rate events.<br>Comments system by attendees.</td>
-    <td>None deteced.</td>
+    <td>None detected.</td>
     
   </tr>
   <tr>
@@ -200,14 +211,8 @@ Here is an image of our ERD:
     
   </tr>
   <tr>
-    <td>As a user, I want to be able to choose an answer from a pre-populated list.</td>
-    <td>List of answers to be selected</td>
-    <td>None detected</td>
-    
-  </tr>
-  <tr>
-    <td>As a user, I want to receive feedback on the answers.</td>
-    <td>Clear signal of correct / incorrect answer</td>
+    <td>As a reviewer, I want to be able to choose the star rating from a pre-populated list.</td>
+    <td>Star ratings selectable from 1-5 stars.</td>
     <td>None detected</td>
     
   </tr>
