@@ -12,9 +12,7 @@ Besides, right at the top the users can see the logo of the page in bright blue 
 
 <strong>Landing page for first time users</strong>
 
-addd 
-
-<img src="imge urls goes here" alt="home page landing page first time">
+<img src="./ReadmeFiles/ReadmeImages/landing_page.png" alt="home page landing page first time">
 
 <strong>Home page across multiple devices</strong>
 
@@ -249,6 +247,11 @@ Here is an image of our ERD:
     <td>N/A</td>
   </tr>
   
+  <tr>
+    <td>Bug: display of header and nav bar on mobile devices</td>
+    <td>N/A</td>
+    <td>These should collapse down on the smallest screen size</td>
+  </tr>
 
   </table>
 
@@ -265,36 +268,35 @@ Here is an image of our ERD:
     <td>Follow option.</td>
     <td>N/A</td>
   </tr>
-
-
-## Fixed Bugs / Issues
-<br>
-<table>
-  <tr>
-    <th>Bug/Issue</th>
-    <th>Image</th>
-    <th>Resolution</th>
-  </tr>
-  <tr>
-  <td>"Select type" option overflows to below options box on smaller devices</td>
-    <td><img src="assets/images/readMeImages/bugs/fixed/questionsoverflow.png" alt="Image showing box obscuring the logo on larger devices"></td>
-    
-  <td>We added media queries to ensure effective responsiveness</td>
-  </tr>
   </table>
 
-## Unfixed Bugs / Issues
+
+### Fixed Bugs
 <table>
   <tr>
-    <th>Bug/Issue</th>
-    <th>Image</th>
+    <th>Bug</th>
+    <th>Description</th>
     <th>Resolution</th>
   </tr>
   <tr>
-  <td>On large devices the "Enter name" box obscures the brand logo and feels like a pop-up rather than an integrated element of the UX package</td>
-    <td><img src="assets/images/readMeImages/amiresponsive/loginscreenpng.png" alt="Image showing box obscuring the logo on larger devices"></td>
+  <td>User upload of images</td>
+  <td>Images uploaded through the site profile or event creation pages were not being added to cloudinary and so weren't being reflected in the database or created profile/event.</td>
+  <td>This was an issue with the setup of the cloudinary upload field. A workaround was found employing the cloudinary upload widget to upload the image and then using JavaScript to populate the image URL for display in the created profile/event. This will be improved in the next sprint to bring the image upload into the form itself, since the solution to the bug has now been found.</td>
+  </tr>
+</table>
+
+## Unfixed Bugs
+<table>
+  <tr>
+    <th>Bug/Issue</th>
+    <th>Description</th>
+    <th>Resolution</th>
+  </tr>
+  <tr>
+  <td>"Attend" button for events does not change to reflect that a user is attending an event.</td>
+  <td>The "Attend" button for each event on the home page should change to reflect that a signed-in user is attending.</td>
     
-  <td>Unfortunately we ran out of time to fix this. We would in future sprints change from an in-browser alert box to a html modal box, that would be styled and centred on the screen etc as part of a user management system.</td>
+  <td>As with the image upload bug, the fix for this has been found on a subsequent project and will be implemented in the next sprint. It can be achieved using JavaScript.</td>
   </tr>
 </table>
 
@@ -304,6 +306,14 @@ Here is an image of our ERD:
 For HTML validation https://validator.w3.org/
 
 For CSS validation  https://jigsaw.w3.org/css-validator/
+
+### Responsiveness
+
+The site was tested for responsiveness across a range of screen sizes, and was found to adjust to the different screen sizes well. The below screenshot from [amiresponsive](https://ui.dev/amiresponsive) shows this.
+
+A bug to be fixed in the next sprint is the display of the header and nav bar on mobile devices, both of which should adapt to fit the screen. The latter should collapse into a burger-style menu icon.
+
+<img src="./ReadmeFiles/ReadmeImages/amiresponsive.png" alt="amiresponsive screenshot for site.">
 
 ## Deployment
 
