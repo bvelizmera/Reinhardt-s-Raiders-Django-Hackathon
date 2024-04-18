@@ -173,24 +173,24 @@ Here is an image of our ERD:
    <tr>
     <td>As a user I want to know the name of the website so that I can share it with people. </td>
     <td>Title of the app displayed on the header with an attractive font style.</td>
-    <td>The title sometimes does not collapse properly.</td>
+    <td>None detected</td>
    
     
   </tr>
   <tr>
     <td>As a user I want to be able to create an account so I can have my own user profile.</td>
     <td>Create own account.<br>Log into profile.</td>
-    <td>Error message displayed in the middle.</td>
+    <td>None detected</td>
   
   </tr>
    <tr>
     <td>As a student I can join events so that I can foster growth in my interests or studies</td>
     <td>Events page with all events displayed.<br>Organisers know who is attending.</td>
-    <td>On event detail page attending button can't see student status.</td>
+    <td>On event detail page attending button can't see student status. To be fixed next sprint.</td>
   <tr>
-    <td>As a user I can update my profile so that other users can learn more about me and i see more related content</td>
+    <td>As a user I can update my profile so that other users can learn more about me and I see more related content</td>
     <td>Display name.<br>Display bio.</td>
-    <td>Does not have a list of future events to be attended.<br>Because of the way that the user is prompted to create a student profile, the view function that is triggered will always take them on to the user events page rather than wherever they had come from. </td>
+    <td>None detected. </td>
   </tr>
   <tr>
     <td>As a site owner I can collect feedback on events so that I can see which events are successful and popular and which arent.</td>
@@ -199,9 +199,9 @@ Here is an image of our ERD:
     
   </tr>
   <tr>
-    <td>As a Organiser I can create events so that students can attend them.</td>
-    <td>Specify date, time, location, course or interest, and max. participants.<br>List of students attending.<br>Add an event picture.</td>
-    <td>List of students when event is expanded not.</td>
+    <td>As an organiser I can create events so that students can attend them.</td>
+    <td>Specify date, time, location, course or interest, and max. participants.<br>Add an event picture.</td>
+    <td>None detected.</td>
     
   </tr>
   <tr>
@@ -235,7 +235,6 @@ Here is an image of our ERD:
   <tr>
     <th>User Story</th>
     <th>Features</th>
-    <th>Bugs / Issues</th>
   </tr>
 
 
@@ -243,19 +242,25 @@ Here is an image of our ERD:
   <tr>
     <td>As a student I want to able to search filter events so that I can attend events of my interest.</td>
     <td>Filter by category, words or interests.</td>
-    <td>N/A</td>
   </tr>
   
   <tr>
     <td>As a Student I can get notified of upcoming events so that I am less likely to miss or forget the event.</td>
     <td>Get notifications from upcoming events.</td>
-    <td>N/A</td>
   </tr>
   
   <tr>
-    <td>Bug: display of header and nav bar on mobile devices</td>
-    <td>N/A</td>
-    <td>These should collapse down on the smallest screen size</td>
+    <td>As a user I can receive confirmation of successful create, update and delete operations so that I can have a more positive user experience</td>
+    <td>Implement messages to confirm user actions</td>
+  </tr>
+
+  <tr>
+    <td>
+      As an organiser I can see which students are going to attend the events that I have created so that I can improve my event offering.
+    </td>
+    <td>
+      List of attendees visible on event detail page, but hidden from all but authenticated event organiser.
+    </td>
   </tr>
 
   </table>
@@ -266,12 +271,10 @@ Here is an image of our ERD:
   <tr>
     <th>User Story</th>
     <th>Features</th>
-    <th>Bugs / Issues</th>
   </tr>
   <tr>
     <td>As a user I want to be able to follow other students.</td>
     <td>Follow option.</td>
-    <td>N/A</td>
   </tr>
   </table>
 
@@ -291,6 +294,9 @@ Here is an image of our ERD:
 </table>
 
 ## Unfixed Bugs
+
+These will also be fixed in the next sprint.
+
 <table>
   <tr>
     <th>Bug/Issue</th>
@@ -315,8 +321,6 @@ For CSS validation  https://jigsaw.w3.org/css-validator/
 ### Responsiveness
 
 The site was tested for responsiveness across a range of screen sizes, and was found to adjust to the different screen sizes well. The below screenshot from [amiresponsive](https://ui.dev/amiresponsive) shows this.
-
-A bug to be fixed in the next sprint is the display of the header and nav bar on mobile devices, both of which should adapt to fit the screen. The latter should collapse into a burger-style menu icon.
 
 <img src="./ReadmeFiles/ReadmeImages/amiresponsive.png" alt="amiresponsive screenshot for site.">
 
@@ -379,17 +383,7 @@ This site involved the use of the following technologies & frameworks:
 
 Other useful tools were [Coolors](https://coolors.co/012765-d30cd5-003fa5-010100-f8fff4) for colour palette selection and [fontawesome](https://fontawesome.com/) for icons.
 
-
-
-
-
-
-
-### Content 
-
-For validation in HTML https://validator.w3.org/
-
-For validation in CSS https://jigsaw.w3.org/css-validator/
-
-Wireframes produced using [Balsamiq](https://balsamiq.com/)
+## Development Team
+This site was developed as part of a hackathon within the Code Institute's Full Stack Development Bootcamp. 
+The team lead was [Bill](https://github.com/bvelizmera), working with [James](https://github.com/alphabetjim), [Liam](https://github.com/caleom) and [Martina](https://github.com/martinamicaela).
 
