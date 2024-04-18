@@ -321,6 +321,7 @@ A bug to be fixed in the next sprint is the display of the header and nav bar on
 <img src="./ReadmeFiles/ReadmeImages/amiresponsive.png" alt="amiresponsive screenshot for site.">
 
 #### Individual Pages
+The responsiveness of the site's individual pages is shown below.
 <strong> Home </strong>
 
 ![](./ReadmeFiles/responsiveGifs/home_responsive.gif)
@@ -332,6 +333,22 @@ A bug to be fixed in the next sprint is the display of the header and nav bar on
 <strong> Profile </strong>
 
 ![](./ReadmeFiles/responsiveGifs/profile_responsive.gif)
+
+<strong> New Student Form </strong>
+
+![](./ReadmeFiles/responsiveGifs/newstudent_responsive.gif)
+
+<strong> Signup </strong>
+
+![](./ReadmeFiles/responsiveGifs/signup_responsive.gif)
+
+<strong> Login </strong>
+
+![](./ReadmeFiles/responsiveGifs/login_responsive.gif)
+
+<strong> Logout </strong>
+
+![](./ReadmeFiles/responsiveGifs/logout_responsive.gif)
 
 ## Deployment
 
