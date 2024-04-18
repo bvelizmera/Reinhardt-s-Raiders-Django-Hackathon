@@ -5,8 +5,14 @@
 {% url 'non_student' as non_student_url %}
 {% url 'redirect_to_signup' as redirect_signup_url %}
 
-<h1 class="text-center">All Events</h1>
 
+<p id="usernamePara" class="hidden">
+    {% if user.is_authenticated %}
+        {{ user.username }}
+    {% endif %}
+</p>
+
+<h1 class="text-center">All Events</h1>
 <!-- Trying to establish a means of accessing whether student is attending each -->
 <!-- <p>Student {{ student.firstname }} {{ student.lastname }} currently attending: {{ student.attending|length }}</p> -->
 <div class="">
@@ -34,10 +40,14 @@
 
 
                     {% if user.is_authenticated and is_student %}
+                        <p class="attendees hidden" id="attendees{{event.pk}}">{% for attendee in event.attending.all %}
+                            {{ attendee.user.username }}
+                            {% endfor %}
+                        </p>
                         <form action="{% url 'event_attending' event.id %}" method="POST">
                         {% csrf_token %}
                         <!-- TODO: need to implement something to reflect whether user is attending -->
-                        <button type="submit" name="event_id" value="{{ event.id }}" class="button float-end" {% if event.attending.count == event.max_capacity  %}
+                        <button id="attend{{event.pk}}" type="submit" name="event_id" value="{{ event.id }}" class="button float-end" {% if event.attending.count == event.max_capacity  %}
                         disabled{% endif %}>Attend</button>
                         <!-- May need to be in the form of a line of text under the button including *You* if attending -->
                         </form>
@@ -64,3 +74,7 @@
     {% endfor %}
 </div>
 {% endblock content %}
+
+{% block extras %}
+    <script src="{% static 'js/attendButtonUpdate.js' %}"></script>
+{% endblock %}

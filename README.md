@@ -291,23 +291,11 @@ Here is an image of our ERD:
   <td>Images uploaded through the site profile or event creation pages were not being added to cloudinary and so weren't being reflected in the database or created profile/event.</td>
   <td>This was an issue with the setup of the cloudinary upload field. A workaround was found employing the cloudinary upload widget to upload the image and then using JavaScript to populate the image URL for display in the created profile/event. This will be improved in the next sprint to bring the image upload into the form itself, since the solution to the bug has now been found.</td>
   </tr>
-</table>
-
-## Unfixed Bugs
-
-These will also be fixed in the next sprint.
-
-<table>
-  <tr>
-    <th>Bug/Issue</th>
-    <th>Description</th>
-    <th>Resolution</th>
-  </tr>
   <tr>
   <td>"Attend" button for events does not change to reflect that a user is attending an event.</td>
   <td>The "Attend" button for each event on the home page should change to reflect that a signed-in user is attending.</td>
     
-  <td>As with the image upload bug, the fix for this has been found on a subsequent project and will be implemented in the next sprint. It can be achieved using JavaScript.</td>
+  <td>Fixed using JavaScript.</td>
   </tr>
 </table>
 

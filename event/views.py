@@ -29,11 +29,13 @@ def eventsDisplay(request):
     queryset = Event.objects.all()
     is_student = is_viewer_student(request)
 
-    return render(request, 
-        'event/event.html', 
-        {"event_queryset": queryset,
+    context = {"event_queryset": queryset,
          "is_student": is_student,
         }
+
+    return render(request, 
+        'event/event.html', 
+        context,
     )
 
 def EventAttending(request, pk):
