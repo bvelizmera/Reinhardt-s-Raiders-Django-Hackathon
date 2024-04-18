@@ -203,18 +203,21 @@ def upload(request):
 def profile(request):
 
     student=request.user
-    print(Student.user)
     
-    profile = get_object_or_404(Student, user=request.user)
-    events = Event.objects.filter(attending__username__contains=request.user)
-    
-    
-    return render(request,
-        'event/user_profile.html',
-        {'profile': profile,
-        'events': events,
-        }
-    )
+    try:
+        profile = get_object_or_404(Student, user=request.user)
+    except:
+        return HttpResponseRedirect('../new_student/')
+    else:
+        events = Event.objects.filter(attending__username__contains=request.user)
+        
+        
+        return render(request,
+            'event/user_profile.html',
+            {'profile': profile,
+            'events': events,
+            }
+        )
 
 def login_view(request):
     if request.method == 'POST':

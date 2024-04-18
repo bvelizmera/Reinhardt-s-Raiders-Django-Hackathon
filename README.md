@@ -325,6 +325,14 @@ A bug to be fixed in the next sprint is the display of the header and nav bar on
 
 ![](./ReadmeFiles/responsiveGifs/home_responsive.gif)
 
+<strong> My Events </strong>
+
+![](./ReadmeFiles/responsiveGifs/myevents_responsive.gif)
+
+<strong> Profile </strong>
+
+![](./ReadmeFiles/responsiveGifs/profile_responsive.gif)
+
 ## Deployment
 
 Site successfully deployed on [heroku](https://campus-campfire-d6ae0237c555.herokuapp.com/)
