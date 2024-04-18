@@ -12,28 +12,30 @@
 </div>
 <div class="text-center justify-content-center">
     {% for event in events_queryset %}
-        <section class="event-section row m-1">
-            <div class="col-12 col-lg-4">
-                <div class="aspect-ratio">
-                    {% if "placeholder" in event.photo.url %}
-                    <img class="event_image" src="{% static 'images/default.webp' %}"
-                        alt="placeholder image">
-                    {% else %}
-                    <img class="event_image" src="{{ event.photo.url }}"
-                        alt="{{ event.name }}">
-                    {% endif %}
+        {% if event.pk != 2 %} <!-- Avoid error-causing duplicate entry -->
+            <section class="event-section row m-1">
+                <div class="col-12 col-lg-4">
+                    <div class="aspect-ratio">
+                        {% if "placeholder" in event.photo.url %}
+                        <img class="event_image" src="{% static 'images/default.webp' %}"
+                            alt="placeholder image">
+                        {% else %}
+                        <img class="event_image" src="{{ event.photo.url }}"
+                            alt="{{ event.name }}">
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-lg-8">
-                <p class="counter float-end {% if event.attending.count == event.max_capacity %}
-                red-text {% else  %} green-text {% endif %}"><i class="fa-solid fa-person"></i> {{ event.attending.count }} / {{ event.max_capacity }}</p>
-                <h2><a href="{% url 'event_detail' event.id %}" class="post-link">{{ event.name }}</a></h2>
-                <h3><i class="fa-solid fa-location-dot"></i> {{ event.location }}</h3>
-                <h4><i class="fa-solid fa-calendar"></i> {{ event.date }} | {{ event.time }}</h4>
-                <p><i class="fa-solid fa-user"></i> {{ event.creator }}</p>
+                <div class="col-12 col-lg-8">
+                    <p class="counter float-end {% if event.attending.count == event.max_capacity %}
+                    red-text {% else  %} green-text {% endif %}"><i class="fa-solid fa-person"></i> {{ event.attending.count }} / {{ event.max_capacity }}</p>
+                    <h2><a href="{% url 'event_detail' event.id %}" class="post-link">{{ event.name }}</a></h2>
+                    <h3><i class="fa-solid fa-location-dot"></i> {{ event.location }}</h3>
+                    <h4><i class="fa-solid fa-calendar"></i> {{ event.date }} | {{ event.time }}</h4>
+                    <p><i class="fa-solid fa-user"></i> {{ event.creator }}</p>
 
-            </div>
-        </section>
+                </div>
+            </section>
+        {% endif %}
     {% endfor %}
     <!-- Include event_form here -->
     <div class="row text-center justify-content-center">
