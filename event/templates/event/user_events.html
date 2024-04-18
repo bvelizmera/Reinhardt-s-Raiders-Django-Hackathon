@@ -25,11 +25,9 @@
                 </div>
             </div>
             <div class="col-12 col-lg-8">
-                <span>
-                    <p class="counter float-end {% if event.attending.count == event.max_capacity %}
-                    red-text {% else  %} green-text {% endif %}"><i class="fa-solid fa-person"></i> {{ event.attending.count }} / {{ event.max_capacity }}</p>
-                    <h2><a href="{% url 'event_detail' event.id %}" class="post-link">{{ event.name }}</a></h2>
-                </span>
+                <p class="counter float-end {% if event.attending.count == event.max_capacity %}
+                red-text {% else  %} green-text {% endif %}"><i class="fa-solid fa-person"></i> {{ event.attending.count }} / {{ event.max_capacity }}</p>
+                <h2><a href="{% url 'event_detail' event.id %}" class="post-link">{{ event.name }}</a></h2>
                 <h3><i class="fa-solid fa-location-dot"></i> {{ event.location }}</h3>
                 <h4><i class="fa-solid fa-calendar"></i> {{ event.date }} | {{ event.time }}</h4>
                 <p><i class="fa-solid fa-user"></i> {{ event.creator }}</p>
@@ -48,8 +46,9 @@
                         style="margin-top: 1.3em;">
             {{ event_form | crispy }}
             {% csrf_token %}
-            <button class="button" id="submitButton" type="submit"
-                class="button">Submit</button>
+            <button class="button" id="submitButton" type="submit">
+                Submit
+            </button>
             </form>
         </div>
         <div class="d-none" id="photo_url"></div>

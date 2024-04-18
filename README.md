@@ -314,9 +314,21 @@ These will also be fixed in the next sprint.
 
 ### Validator Testing 
 
-For HTML validation https://validator.w3.org/
+#### HTML
+The [w3 validator](https://validator.w3.org/) was used to validate all pages. All passed with no errors other than those introduced by external packages:
+  - crispy-forms in its rendering of textarea elements, which are outside of developer control. 
+  - allauth: the signup page showed errors related to the html used to display the registration form, again outside of developer control.
+<img src='./ReadmeFiles/ReadmeImages/html validation pass.png'>
 
-For CSS validation  https://jigsaw.w3.org/css-validator/
+#### CSS
+The [W3C validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS written for the site. All of the developer-generated CSS passed with no errors, with the exception of some pseudo-classes used to generate hover effects on navbar items and buttons. However these work as intended and do not cause any issues.
+
+<img src='./ReadmeFiles/ReadmeImages/css_validator.png'>
+
+#### JavaScript
+The JavaScript written for this website was passed through [jshint](https://jshint.com/) and found to contain no errors, with only advisory warnings about syntax available in ES6 being displayed.
+
+<img src='./ReadmeFiles/ReadmeImages/js_validator.png'>
 
 ### Responsiveness
 

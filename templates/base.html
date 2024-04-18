@@ -12,7 +12,7 @@
 
 <head>
     <title>Campus Campfire</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/668de150a5.js" crossorigin="anonymous"></script>
@@ -44,7 +44,7 @@
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar navbar-tabs-container collapse navbar-collapse p-0">
+                <div class="navbar navbar-tabs-container collapse navbar-collapse p-0" id="navbarText">
                         <a class="navbar-tab {% if request.path == home_url %}active" aria-current="page{% endif %}"
                             href="{% url 'home' %}">Home</a>
                         {% if user.is_authenticated %}
