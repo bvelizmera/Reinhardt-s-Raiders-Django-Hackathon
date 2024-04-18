@@ -320,17 +320,45 @@ A bug to be fixed in the next sprint is the display of the header and nav bar on
 
 <img src="./ReadmeFiles/ReadmeImages/amiresponsive.png" alt="amiresponsive screenshot for site.">
 
+#### Individual Pages
+<strong> Home </strong>
+
+![](./ReadmeFiles/responsiveGifs/home_responsive.gif)
+
 ## Deployment
 
 Site successfully deployed on [heroku](https://campus-campfire-d6ae0237c555.herokuapp.com/)
 
-## Credits 
+## Technologies Used
+This site involved the use of the following technologies & frameworks:
+- HTML
+- CSS
+  - Bootstrap 5
+- JavaScript
+- Python
+- Django 4
+  - Package allauth for authorisation
+  - Package crispy for form display
+  - Package allauth for authorisation
+  - Package summernote for admin page model display
+  - Package whitenoise for handling static files
+- Cloudinary for image storage
+- ElephantSQL for database hosting
+- Heroku for deployment
+- GitHub for version control
+- GitHub Projects for project management
+- LucidChart to produce the database diagram
+- Balsamiq for wireframing
 
-[Coolors](https://coolors.co/012765-d30cd5-003fa5-010100-f8fff4) was used for colour pallette
+### Other Credits 
 
-[Bootstrap](https://getbootstrap.com/)
+Other useful tools were [Coolors](https://coolors.co/012765-d30cd5-003fa5-010100-f8fff4) for colour palette selection and [fontawesome](https://fontawesome.com/) for icons.
 
-[fontawesome](https://fontawesome.com/)
+
+
+
+
+
 
 ### Content 
 
