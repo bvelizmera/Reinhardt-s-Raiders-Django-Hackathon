@@ -7,8 +7,9 @@
 
 {% if user.is_authenticated and is_student %}
 <!-- Show events created by currently logged-in user -->
-<h1>{{ request.user }}'s Events</h1>
-<p>You have created {{ events_queryset|length }} events</p>
+<div class="text-center">
+    <h1>{{ request.user }}'s Events</h1>
+</div>
 {% for event in events_queryset %}
     <section class="event-section row m-1">
         <div class="col-12 col-lg-4">
@@ -36,8 +37,8 @@
     </section>
 {% endfor %}
 <!-- Include event_form here -->
-<div class="justify-content-center">
-    <div class="col-6 newEventDiv">
+<div class="row text-center justify-content-center">
+    <div class="col-12 col-md-6 newEventDiv">
         <h2>Create a new Event</h2>
         <h4>First, upload a photo:</h4>
         <button id="upload_widget" class="cloudinary-button">Upload files</button>
