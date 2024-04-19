@@ -25,7 +25,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <p>{{ event.excerpt }}</p>
+                <p>{{ event.excerpt|striptags }}</p>
             </div>
         </div>
     </div>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <p id="review{{ review.id }}">{{ review.body}}<p>
+                            <p id="review{{ review.id }}">{{ review.body|striptags }}<p>
                             <p class="float-start">
                             {% for counter in "x"|rjust:review.rating %}
                             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
