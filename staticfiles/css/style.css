@@ -16,6 +16,10 @@
     --bs-body-font-family: poppins, sans-serif;
 }
 
+.hidden{
+  font-size: 0%;
+}
+
 /* Stlying for the title and name of the website */
 #appname {
     height: 100%;
